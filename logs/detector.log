@@ -1,0 +1,14 @@
+2026-06-03 17:31:34,755 | INFO | VANET Attack Detector starting...
+2026-06-03 17:31:34,755 | INFO | Watching directory: /tmp
+2026-06-03 17:31:34,755 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-06-03 17:31:34,755 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-06-03 17:31:34,776 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-06-03 17:31:56,023 | INFO | Attack sentinel detected: vanet_attack_ready_1 → cycle 1
+2026-06-03 17:31:56,124 | INFO | ==================================================
+2026-06-03 17:31:56,124 | INFO | Attack detection cycle 1
+2026-06-03 17:31:56,125 | INFO | Cycle 1: read metrics for 3 nodes
+2026-06-03 17:31:56,126 | INFO | Cycle 1: invoking attack detection...
+2026-06-03 17:31:56,250 | INFO | DetectAttacks success | Cycle: 1 | Detections: 2
+2026-06-03 17:31:56,250 | WARNING | Cycle 1: ⚠ 2 attack(s) detected!
+2026-06-03 17:31:56,250 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 5 | Flow: 1 | FF: 0.700 | PDRN: 0.600 | Variance: 0.0000
+2026-06-03 17:31:56,250 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 33 | Flow: 2 | FF: 0.850 | PDRN: 0.550 | Variance: 0.0000
