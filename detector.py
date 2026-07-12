@@ -6,6 +6,7 @@ Reads vanet_metrics_N.json and invokes attack detection chaincode
 """
 
 import os
+import csv
 import json
 import logging
 import time
@@ -17,6 +18,10 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config import WATCH_DIR, LOG_FILE
 from fabric_client import detect_attacks
+
+# Attack-detection pipeline reads from a dedicated subfolder, separate
+# from WATCH_DIR (which still serves the vanet_ready_N middleware).
+ATTACK_WATCH_DIR = "/tmp/ai_agent"
 
 # ─── Logging Setup ────────────────────────────────────────────────────────────
 logging.basicConfig(
@@ -37,13 +42,55 @@ ATTACK_LABELS = {
     "Flow_Stretching_Attack":     "🟡 FLOW STRETCHING ATTACK",
 }
 
+# ─── CSV → Chaincode Input Transform ──────────────────────────────────────────
 
+def transform_csv_row(row: dict) -> dict:
+    """
+    Maps one row of ff_node_anomaly_scores_N.csv into the node-dict shape
+    expected by the DetectAttacks chaincode.
+
+    CSV column          → chaincode field
+    ───────────────────────────────────────────────
+    node_id              → node_id
+    flow_id               → flow_id
+    sum_abs_ff_deviation_normalized → flow_fraction
+    node_pdr              → pdrn   (divided by 100)
+    """
+    return {
+        "node_id": int(row["node_id"]),
+        "flow_id": int(row["flow_id"]),
+        "flow_fraction": float(row["sum_abs_ff_deviation_normalized"]),
+        "pdrn": float(row["node_pdr"]) / 100.0,
+    }
+
+
+def load_metrics_from_csv(csv_file: str) -> dict:
+    """
+    Reads ff_node_anomaly_scores_N.csv and returns the chaincode input shape:
+        { "sim_time": <float>, "nodes": [ {...}, {...}, ... ] }
+
+    sim_time is taken from the sim_time column of the first row — all rows
+    in a given cycle's CSV share the same sim_time, since one file = one cycle.
+    """
+    nodes = []
+    sim_time = 0.0
+    first_row = True
+
+    with open(csv_file, "r", newline="") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if first_row:
+                sim_time = float(row["sim_time"])
+                first_row = False
+            nodes.append(transform_csv_row(row))
+
+    return {"sim_time": sim_time, "nodes": nodes}
 # ─── Core Processing Pipeline ─────────────────────────────────────────────────
 
 def process_metrics(cycle_id: int, metrics_file: str, sentinel_file: str):
     """
     Full pipeline for attack detection in one cycle:
-    1. Read node metrics from JSON file
+    1. Read node metrics from CSV file
     2. Invoke DetectAttacks chaincode
     3. Log detections
     4. Cleanup temp files
@@ -53,13 +100,12 @@ def process_metrics(cycle_id: int, metrics_file: str, sentinel_file: str):
     logger.info(f"Attack detection cycle {cycle_id}")
 
     try:
-        # ── Step 1: Read node metrics ─────────────────────────────────────────
+        # ── Step 1: Read and transform node metrics ───────────────────────────
         if not os.path.exists(metrics_file):
             logger.error(f"Metrics file not found: {metrics_file}")
             return
 
-        with open(metrics_file, "r") as f:
-            data = json.load(f)
+        data = load_metrics_from_csv(metrics_file)
 
         nodes = data.get("nodes", [])
         sim_time = data.get("sim_time", 0.0)
@@ -87,7 +133,7 @@ def process_metrics(cycle_id: int, metrics_file: str, sentinel_file: str):
                     f"Flow: {d['flow_id']} | "
                     f"FF: {d['flow_fraction']:.3f} | "
                     f"PDRN: {d['pdrn']:.3f} | "
-                    f"Variance: {d['variance']:.4f}"
+                
                 )
 
     except Exception as e:
@@ -134,7 +180,7 @@ class MetricsEventHandler(FileSystemEventHandler):
             logger.warning(f"Could not parse cycle id from: {filename}")
             return
 
-        metrics_file  = os.path.join(WATCH_DIR, f"vanet_metrics_{cycle_id}.json")
+        metrics_file  = os.path.join(ATTACK_WATCH_DIR, f"ff_node_anomaly_scores_{cycle_id}.csv")
         sentinel_file = event.src_path
 
         logger.info(f"Attack sentinel detected: {filename} → cycle {cycle_id}")
@@ -149,27 +195,27 @@ class MetricsEventHandler(FileSystemEventHandler):
 
 def main():
     logger.info("VANET Attack Detector starting...")
-    logger.info(f"Watching directory: {WATCH_DIR}")
+    logger.info(f"Watching directory: {ATTACK_WATCH_DIR}")
     logger.info(f"Log file: {LOG_FILE}")
     logger.info(f"Sentinel pattern: vanet_attack_ready_N")
 
     # Process any missed cycles at startup
+
     import glob
-    missed = sorted(glob.glob(os.path.join(WATCH_DIR, "vanet_attack_ready_*")))
+    missed = sorted(glob.glob(os.path.join(ATTACK_WATCH_DIR, "vanet_attack_ready_*")))
     for sentinel in missed:
         filename = os.path.basename(sentinel)
         try:
             cycle_id = int(filename.replace("vanet_attack_ready_", ""))
-            metrics_file = os.path.join(WATCH_DIR, f"vanet_metrics_{cycle_id}.json")
+            metrics_file = os.path.join(ATTACK_WATCH_DIR, f"ff_node_anomaly_scores_{cycle_id}.csv")
             logger.info(f"Found missed cycle at startup: {cycle_id}")
             process_metrics(cycle_id, metrics_file, sentinel)
         except ValueError:
             pass
-
     # Start file watcher
     event_handler = MetricsEventHandler()
     observer = Observer()
-    observer.schedule(event_handler, WATCH_DIR, recursive=False)
+    observer.schedule(event_handler, ATTACK_WATCH_DIR, recursive=False)
     observer.start()
 
     logger.info("Attack detector ready — waiting for metrics from fix.cc...")
