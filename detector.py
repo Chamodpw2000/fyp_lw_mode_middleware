@@ -80,7 +80,7 @@ def load_metrics_from_csv(csv_file: str) -> dict:
         reader = csv.DictReader(f)
         for row in reader:
             if first_row:
-                sim_time = float(row["sim_time"])
+                sim_time = float(row["sim_time_s"])
                 first_row = False
             nodes.append(transform_csv_row(row))
 
