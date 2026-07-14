@@ -197,3 +197,733 @@
 2026-07-11 00:11:24,667 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
 2026-07-11 00:11:24,667 | INFO | Sentinel pattern: vanet_attack_ready_N
 2026-07-11 00:11:24,674 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-07-12 16:41:53,084 | INFO | VANET Attack Detector starting...
+2026-07-12 16:41:53,087 | INFO | Watching directory: /tmp/ai_agent
+2026-07-12 16:41:53,088 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-07-12 16:41:53,088 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-07-12 16:41:53,107 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-07-12 16:52:26,178 | INFO | Attack sentinel detected: vanet_attack_ready_1 → cycle 1
+2026-07-12 16:52:26,282 | INFO | ==================================================
+2026-07-12 16:52:26,282 | INFO | Attack detection cycle 1
+2026-07-12 16:52:26,284 | INFO | Cycle 1: read metrics for 109 nodes
+2026-07-12 16:52:26,285 | INFO | Cycle 1: invoking attack detection...
+2026-07-12 16:52:26,455 | ERROR | DetectAttacks failed | returncode: 1 | output: [31m2026-07-12 16:52:26.440 +0530 0001 ERRO[0m [main] [31;1mInitCmd[0m -> Cannot run peer because cannot init crypto, specified path "/home/chamod/fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp" does not exist or cannot be accessed: stat /home/chamod/fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp: no such file or directory
+
+2026-07-12 16:52:26,460 | INFO | Cycle 1: ✓ No attacks detected — all nodes clean
+2026-07-12 16:57:49,456 | INFO | Attack sentinel detected: vanet_attack_ready_2 → cycle 2
+2026-07-12 16:57:49,557 | INFO | ==================================================
+2026-07-12 16:57:49,558 | INFO | Attack detection cycle 2
+2026-07-12 16:57:49,558 | INFO | Cycle 2: read metrics for 99 nodes
+2026-07-12 16:57:49,559 | INFO | Cycle 2: invoking attack detection...
+2026-07-12 16:57:49,733 | ERROR | DetectAttacks failed | returncode: 1 | output: [31m2026-07-12 16:57:49.718 +0530 0001 ERRO[0m [main] [31;1mInitCmd[0m -> Cannot run peer because cannot init crypto, specified path "/home/chamod/fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp" does not exist or cannot be accessed: stat /home/chamod/fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp: no such file or directory
+
+2026-07-12 16:57:49,734 | INFO | Cycle 2: ✓ No attacks detected — all nodes clean
+2026-07-12 17:20:22,201 | INFO | VANET Attack Detector starting...
+2026-07-12 17:20:22,202 | INFO | Watching directory: /tmp/ai_agent
+2026-07-12 17:20:22,202 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-07-12 17:20:22,202 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-07-12 17:20:22,311 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-07-12 17:27:15,720 | INFO | Attack sentinel detected: vanet_attack_ready_1 → cycle 1
+2026-07-12 17:27:15,823 | INFO | ==================================================
+2026-07-12 17:27:15,824 | INFO | Attack detection cycle 1
+2026-07-12 17:27:15,830 | INFO | Cycle 1: read metrics for 109 nodes
+2026-07-12 17:27:15,866 | INFO | Cycle 1: invoking attack detection...
+2026-07-12 17:27:16,272 | INFO | DetectAttacks success | Cycle: 1 | Detections: 10
+2026-07-12 17:27:16,273 | WARNING | Cycle 1: ⚠ 10 attack(s) detected!
+2026-07-12 17:27:16,320 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 3 | Flow: 0 | FF: 0.750 | PDRN: 1.000 | 
+2026-07-12 17:27:16,340 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 0 | FF: 0.833 | PDRN: 1.000 | 
+2026-07-12 17:27:16,344 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 239 | Flow: 0 | FF: 0.833 | PDRN: 1.000 | 
+2026-07-12 17:27:16,344 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 240 | Flow: 0 | FF: 0.750 | PDRN: 1.000 | 
+2026-07-12 17:27:16,345 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 251 | Flow: 0 | FF: 0.533 | PDRN: 1.000 | 
+2026-07-12 17:27:16,345 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 252 | Flow: 0 | FF: 0.571 | PDRN: 1.000 | 
+2026-07-12 17:27:16,346 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 263 | Flow: 0 | FF: 0.750 | PDRN: 1.000 | 
+2026-07-12 17:27:16,346 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 1 | FF: 0.833 | PDRN: 1.000 | 
+2026-07-12 17:27:16,346 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 248 | Flow: 1 | FF: 0.667 | PDRN: 1.000 | 
+2026-07-12 17:27:16,346 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 280 | Flow: 1 | FF: 0.833 | PDRN: 1.000 | 
+2026-07-13 12:19:27,425 | INFO | VANET Attack Detector starting...
+2026-07-13 12:19:27,426 | INFO | Watching directory: /tmp/ai_agent
+2026-07-13 12:19:27,426 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-07-13 12:19:27,426 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-07-13 12:29:53,302 | INFO | VANET Attack Detector starting...
+2026-07-13 12:29:53,302 | INFO | Watching directory: /tmp/ai_agent
+2026-07-13 12:29:53,302 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-07-13 12:29:53,302 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-07-13 12:29:53,305 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-07-13 12:34:30,127 | INFO | VANET Attack Detector starting...
+2026-07-13 12:34:30,132 | INFO | Watching directory: /tmp/ai_agent
+2026-07-13 12:34:30,133 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-07-13 12:34:30,134 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-07-13 12:34:30,136 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-07-13 12:34:37,528 | INFO | Attack detector stopping...
+2026-07-13 12:34:37,537 | INFO | Attack detector stopped
+2026-07-13 12:40:45,972 | INFO | VANET Attack Detector starting...
+2026-07-13 12:40:45,972 | INFO | Watching directory: /tmp/ai_agent
+2026-07-13 12:40:45,972 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-07-13 12:40:45,972 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-07-13 12:40:46,088 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-07-13 12:54:09,964 | INFO | Attack sentinel detected: vanet_attack_ready_1 → cycle 1
+2026-07-13 12:54:10,100 | INFO | ==================================================
+2026-07-13 12:54:10,101 | INFO | Attack detection cycle 1
+2026-07-13 12:54:10,101 | INFO | Cycle 1: read metrics for 84 nodes
+2026-07-13 12:54:10,101 | INFO | Cycle 1: invoking attack detection...
+2026-07-13 12:54:10,535 | INFO | DetectAttacks success | Cycle: 1 | Detections: 14
+2026-07-13 12:54:10,536 | WARNING | Cycle 1: ⚠ 14 attack(s) detected!
+2026-07-13 12:54:10,536 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 3 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 12:54:10,536 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 122 | Flow: 0 | FF: 0.667 | PDRN: 0.333
+2026-07-13 12:54:10,537 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 12:54:10,537 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 162 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 12:54:10,537 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 12:54:10,537 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 240 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 12:54:10,537 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 247 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 12:54:10,538 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 251 | Flow: 0 | FF: 0.533 | PDRN: 1.000
+2026-07-13 12:54:10,540 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 252 | Flow: 0 | FF: 0.571 | PDRN: 1.000
+2026-07-13 12:54:10,540 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 257 | Flow: 0 | FF: 0.545 | PDRN: 1.000
+2026-07-13 12:54:10,541 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 263 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 12:54:10,541 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 1 | FF: 0.833 | PDRN: 1.000
+2026-07-13 12:54:10,541 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 248 | Flow: 1 | FF: 0.667 | PDRN: 1.000
+2026-07-13 12:54:10,541 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 280 | Flow: 1 | FF: 0.833 | PDRN: 1.000
+2026-07-13 12:54:10,542 | INFO | Cycle 1: saved 14 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 12:54:10,543 | INFO | Cycle 1: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_1.csv
+2026-07-13 12:57:55,737 | INFO | Attack sentinel detected: vanet_attack_ready_2 → cycle 2
+2026-07-13 12:57:55,841 | INFO | ==================================================
+2026-07-13 12:57:55,842 | INFO | Attack detection cycle 2
+2026-07-13 12:57:55,842 | INFO | Cycle 2: read metrics for 74 nodes
+2026-07-13 12:57:55,842 | INFO | Cycle 2: invoking attack detection...
+2026-07-13 12:57:56,031 | INFO | DetectAttacks success | Cycle: 2 | Detections: 13
+2026-07-13 12:57:56,031 | WARNING | Cycle 2: ⚠ 13 attack(s) detected!
+2026-07-13 12:57:56,031 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 3 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 12:57:56,032 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 141 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 12:57:56,032 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 12:57:56,032 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 162 | Flow: 0 | FF: 0.733 | PDRN: 1.000
+2026-07-13 12:57:56,032 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 12:57:56,032 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 249 | Flow: 0 | FF: 0.875 | PDRN: 1.000
+2026-07-13 12:57:56,032 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 252 | Flow: 0 | FF: 0.571 | PDRN: 1.000
+2026-07-13 12:57:56,032 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 257 | Flow: 0 | FF: 0.545 | PDRN: 1.000
+2026-07-13 12:57:56,032 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 258 | Flow: 0 | FF: 0.900 | PDRN: 1.000
+2026-07-13 12:57:56,032 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 152 | Flow: 1 | FF: 0.647 | PDRN: 1.000
+2026-07-13 12:57:56,032 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 240 | Flow: 1 | FF: 0.800 | PDRN: 1.000
+2026-07-13 12:57:56,032 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 241 | Flow: 1 | FF: 0.800 | PDRN: 1.000
+2026-07-13 12:57:56,032 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 273 | Flow: 1 | FF: 0.526 | PDRN: 1.000
+2026-07-13 12:57:56,032 | INFO | Cycle 2: saved 13 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 12:57:56,032 | INFO | Cycle 2: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_2.csv
+2026-07-13 13:01:28,102 | INFO | Attack sentinel detected: vanet_attack_ready_3 → cycle 3
+2026-07-13 13:01:28,203 | INFO | ==================================================
+2026-07-13 13:01:28,204 | INFO | Attack detection cycle 3
+2026-07-13 13:01:28,204 | INFO | Cycle 3: read metrics for 78 nodes
+2026-07-13 13:01:28,204 | INFO | Cycle 3: invoking attack detection...
+2026-07-13 13:01:28,389 | INFO | DetectAttacks success | Cycle: 3 | Detections: 9
+2026-07-13 13:01:28,389 | WARNING | Cycle 3: ⚠ 9 attack(s) detected!
+2026-07-13 13:01:28,390 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 62 | Flow: 0 | FF: 0.600 | PDRN: 1.000
+2026-07-13 13:01:28,390 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 0 | FF: 0.800 | PDRN: 1.000
+2026-07-13 13:01:28,390 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 13:01:28,390 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 257 | Flow: 0 | FF: 0.600 | PDRN: 1.000
+2026-07-13 13:01:28,390 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 268 | Flow: 0 | FF: 0.571 | PDRN: 1.000
+2026-07-13 13:01:28,390 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 271 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 13:01:28,390 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 6 | Flow: 1 | FF: 0.800 | PDRN: 0.200
+2026-07-13 13:01:28,390 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 123 | Flow: 1 | FF: 0.750 | PDRN: 1.000
+2026-07-13 13:01:28,390 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 241 | Flow: 1 | FF: 0.571 | PDRN: 1.000
+2026-07-13 13:01:28,391 | INFO | Cycle 3: saved 9 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 13:01:28,391 | INFO | Cycle 3: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_3.csv
+2026-07-13 13:06:27,712 | INFO | Attack sentinel detected: vanet_attack_ready_4 → cycle 4
+2026-07-13 13:06:27,812 | INFO | ==================================================
+2026-07-13 13:06:27,812 | INFO | Attack detection cycle 4
+2026-07-13 13:06:27,813 | INFO | Cycle 4: read metrics for 77 nodes
+2026-07-13 13:06:27,813 | INFO | Cycle 4: invoking attack detection...
+2026-07-13 13:06:28,092 | INFO | DetectAttacks success | Cycle: 4 | Detections: 8
+2026-07-13 13:06:28,092 | WARNING | Cycle 4: ⚠ 8 attack(s) detected!
+2026-07-13 13:06:28,092 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 108 | Flow: 0 | FF: 0.800 | PDRN: 1.000
+2026-07-13 13:06:28,092 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 17 | Flow: 1 | FF: 0.929 | PDRN: 0.071
+2026-07-13 13:06:28,092 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 37 | Flow: 1 | FF: 0.600 | PDRN: 1.000
+2026-07-13 13:06:28,092 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 57 | Flow: 1 | FF: 0.833 | PDRN: 1.000
+2026-07-13 13:06:28,092 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 64 | Flow: 1 | FF: 0.692 | PDRN: 1.000
+2026-07-13 13:06:28,092 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 82 | Flow: 1 | FF: 0.733 | PDRN: 1.000
+2026-07-13 13:06:28,092 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 95 | Flow: 1 | FF: 0.727 | PDRN: 1.000
+2026-07-13 13:06:28,092 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 127 | Flow: 1 | FF: 0.850 | PDRN: 1.000
+2026-07-13 13:06:28,093 | INFO | Cycle 4: saved 8 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 13:06:28,093 | INFO | Cycle 4: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_4.csv
+2026-07-13 13:11:58,304 | INFO | Attack sentinel detected: vanet_attack_ready_5 → cycle 5
+2026-07-13 13:11:58,420 | INFO | ==================================================
+2026-07-13 13:11:58,427 | INFO | Attack detection cycle 5
+2026-07-13 13:11:58,429 | INFO | Cycle 5: read metrics for 52 nodes
+2026-07-13 13:11:58,429 | INFO | Cycle 5: invoking attack detection...
+2026-07-13 13:11:58,873 | INFO | DetectAttacks success | Cycle: 5 | Detections: 5
+2026-07-13 13:11:58,873 | WARNING | Cycle 5: ⚠ 5 attack(s) detected!
+2026-07-13 13:11:58,873 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 6 | Flow: 1 | FF: 0.600 | PDRN: 0.400
+2026-07-13 13:11:58,873 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 10 | Flow: 1 | FF: 0.615 | PDRN: 1.000
+2026-07-13 13:11:58,873 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 37 | Flow: 1 | FF: 0.875 | PDRN: 1.000
+2026-07-13 13:11:58,873 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 121 | Flow: 1 | FF: 0.833 | PDRN: 0.167
+2026-07-13 13:11:58,873 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 271 | Flow: 1 | FF: 0.857 | PDRN: 1.000
+2026-07-13 13:11:58,873 | INFO | Cycle 5: saved 5 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 13:11:58,873 | INFO | Cycle 5: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_5.csv
+2026-07-13 13:16:33,006 | INFO | Attack sentinel detected: vanet_attack_ready_6 → cycle 6
+2026-07-13 13:16:33,129 | INFO | ==================================================
+2026-07-13 13:16:33,129 | INFO | Attack detection cycle 6
+2026-07-13 13:16:33,136 | INFO | Cycle 6: read metrics for 70 nodes
+2026-07-13 13:16:33,137 | INFO | Cycle 6: invoking attack detection...
+2026-07-13 13:16:33,449 | INFO | DetectAttacks success | Cycle: 6 | Detections: 7
+2026-07-13 13:16:33,449 | WARNING | Cycle 6: ⚠ 7 attack(s) detected!
+2026-07-13 13:16:33,449 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 41 | Flow: 0 | FF: 0.667 | PDRN: 1.000
+2026-07-13 13:16:33,449 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 77 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 13:16:33,449 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 78 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 13:16:33,449 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 121 | Flow: 0 | FF: 0.600 | PDRN: 0.400
+2026-07-13 13:16:33,449 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 258 | Flow: 0 | FF: 0.522 | PDRN: 1.000
+2026-07-13 13:16:33,449 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 240 | Flow: 1 | FF: 0.778 | PDRN: 1.000
+2026-07-13 13:16:33,449 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 262 | Flow: 1 | FF: 0.889 | PDRN: 1.000
+2026-07-13 13:16:33,450 | INFO | Cycle 6: saved 7 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 13:16:33,450 | INFO | Cycle 6: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_6.csv
+2026-07-13 13:21:43,330 | INFO | Attack sentinel detected: vanet_attack_ready_7 → cycle 7
+2026-07-13 13:21:43,435 | INFO | ==================================================
+2026-07-13 13:21:43,437 | INFO | Attack detection cycle 7
+2026-07-13 13:21:43,438 | INFO | Cycle 7: read metrics for 83 nodes
+2026-07-13 13:21:43,439 | INFO | Cycle 7: invoking attack detection...
+2026-07-13 13:21:44,300 | INFO | DetectAttacks success | Cycle: 7 | Detections: 3
+2026-07-13 13:21:44,303 | WARNING | Cycle 7: ⚠ 3 attack(s) detected!
+2026-07-13 13:21:44,311 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 152 | Flow: 0 | FF: 0.625 | PDRN: 1.000
+2026-07-13 13:21:44,345 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 262 | Flow: 0 | FF: 0.875 | PDRN: 1.000
+2026-07-13 13:21:44,362 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 38 | Flow: 1 | FF: 0.667 | PDRN: 0.333
+2026-07-13 13:21:44,364 | INFO | Cycle 7: saved 3 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 13:21:44,407 | INFO | Cycle 7: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_7.csv
+2026-07-13 13:31:56,537 | INFO | Attack sentinel detected: vanet_attack_ready_8 → cycle 8
+2026-07-13 13:31:56,639 | INFO | ==================================================
+2026-07-13 13:31:56,639 | INFO | Attack detection cycle 8
+2026-07-13 13:31:56,640 | INFO | Cycle 8: read metrics for 51 nodes
+2026-07-13 13:31:56,640 | INFO | Cycle 8: invoking attack detection...
+2026-07-13 13:31:57,183 | INFO | DetectAttacks success | Cycle: 8 | Detections: 5
+2026-07-13 13:31:57,183 | WARNING | Cycle 8: ⚠ 5 attack(s) detected!
+2026-07-13 13:31:57,184 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 6 | Flow: 0 | FF: 0.667 | PDRN: 0.333
+2026-07-13 13:31:57,184 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 0 | FF: 0.800 | PDRN: 1.000
+2026-07-13 13:31:57,184 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 198 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 13:31:57,185 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 30 | Flow: 1 | FF: 0.600 | PDRN: 1.000
+2026-07-13 13:31:57,185 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 230 | Flow: 1 | FF: 0.667 | PDRN: 1.000
+2026-07-13 13:31:57,186 | INFO | Cycle 8: saved 5 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 13:31:57,188 | INFO | Cycle 8: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_8.csv
+2026-07-13 13:47:33,632 | INFO | Attack sentinel detected: vanet_attack_ready_9 → cycle 9
+2026-07-13 13:47:33,733 | INFO | ==================================================
+2026-07-13 13:47:33,733 | INFO | Attack detection cycle 9
+2026-07-13 13:47:33,734 | INFO | Cycle 9: read metrics for 61 nodes
+2026-07-13 13:47:33,734 | INFO | Cycle 9: invoking attack detection...
+2026-07-13 13:47:33,899 | INFO | DetectAttacks success | Cycle: 9 | Detections: 6
+2026-07-13 13:47:33,899 | WARNING | Cycle 9: ⚠ 6 attack(s) detected!
+2026-07-13 13:47:33,899 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 0 | FF: 0.800 | PDRN: 1.000
+2026-07-13 13:47:33,899 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 162 | Flow: 0 | FF: 0.625 | PDRN: 1.000
+2026-07-13 13:47:33,899 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 247 | Flow: 0 | FF: 0.875 | PDRN: 1.000
+2026-07-13 13:47:33,900 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 268 | Flow: 0 | FF: 0.667 | PDRN: 1.000
+2026-07-13 13:47:33,900 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 269 | Flow: 0 | FF: 0.667 | PDRN: 1.000
+2026-07-13 13:47:33,900 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 270 | Flow: 0 | FF: 0.625 | PDRN: 1.000
+2026-07-13 13:47:33,901 | INFO | Cycle 9: saved 6 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 13:47:33,901 | INFO | Cycle 9: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_9.csv
+2026-07-13 14:03:10,788 | INFO | Attack sentinel detected: vanet_attack_ready_10 → cycle 10
+2026-07-13 14:03:10,889 | INFO | ==================================================
+2026-07-13 14:03:10,889 | INFO | Attack detection cycle 10
+2026-07-13 14:03:10,890 | INFO | Cycle 10: read metrics for 69 nodes
+2026-07-13 14:03:10,890 | INFO | Cycle 10: invoking attack detection...
+2026-07-13 14:03:11,327 | INFO | DetectAttacks success | Cycle: 10 | Detections: 3
+2026-07-13 14:03:11,327 | WARNING | Cycle 10: ⚠ 3 attack(s) detected!
+2026-07-13 14:03:11,327 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 6 | Flow: 0 | FF: 0.667 | PDRN: 0.333
+2026-07-13 14:03:11,327 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 165 | Flow: 0 | FF: 0.667 | PDRN: 1.000
+2026-07-13 14:03:11,327 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 247 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 14:03:11,335 | INFO | Cycle 10: saved 3 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 14:03:11,336 | INFO | Cycle 10: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_10.csv
+2026-07-13 14:15:09,654 | INFO | Attack sentinel detected: vanet_attack_ready_11 → cycle 11
+2026-07-13 14:15:09,778 | INFO | ==================================================
+2026-07-13 14:15:09,779 | INFO | Attack detection cycle 11
+2026-07-13 14:15:09,780 | INFO | Cycle 11: read metrics for 71 nodes
+2026-07-13 14:15:09,781 | INFO | Cycle 11: invoking attack detection...
+2026-07-13 14:15:10,070 | INFO | DetectAttacks success | Cycle: 11 | Detections: 6
+2026-07-13 14:15:10,071 | WARNING | Cycle 11: ⚠ 6 attack(s) detected!
+2026-07-13 14:15:10,071 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 63 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 14:15:10,071 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 152 | Flow: 0 | FF: 0.667 | PDRN: 1.000
+2026-07-13 14:15:10,071 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 162 | Flow: 0 | FF: 0.556 | PDRN: 1.000
+2026-07-13 14:15:10,071 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 0 | FF: 0.800 | PDRN: 1.000
+2026-07-13 14:15:10,071 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 259 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 14:15:10,071 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 269 | Flow: 0 | FF: 0.600 | PDRN: 1.000
+2026-07-13 14:15:10,072 | INFO | Cycle 11: saved 6 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 14:15:10,072 | INFO | Cycle 11: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_11.csv
+2026-07-13 14:35:23,105 | INFO | VANET Attack Detector starting...
+2026-07-13 14:35:23,105 | INFO | Watching directory: /tmp/ai_agent
+2026-07-13 14:35:23,105 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-07-13 14:35:23,105 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-07-13 14:35:23,107 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-07-13 14:50:57,384 | INFO | Attack sentinel detected: vanet_attack_ready_1 → cycle 1
+2026-07-13 14:50:57,492 | INFO | ==================================================
+2026-07-13 14:50:57,492 | INFO | Attack detection cycle 1
+2026-07-13 14:50:57,493 | INFO | Cycle 1: read metrics for 72 nodes
+2026-07-13 14:50:57,493 | INFO | Cycle 1: invoking attack detection...
+2026-07-13 14:50:57,643 | INFO | DetectAttacks success | Cycle: 1 | Detections: 16
+2026-07-13 14:50:57,644 | INFO | Cycle 1: wrote detection summary for 60 nodes to /tmp/ai_agent/detection_summery_cycle_1.csv
+2026-07-13 14:50:57,645 | WARNING | Cycle 1: ⚠ 16 attack(s) detected!
+2026-07-13 14:50:57,645 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 3 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 14:50:57,645 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 14:50:57,646 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 162 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 14:50:57,646 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 14:50:57,646 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 240 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 14:50:57,646 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 247 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 14:50:57,646 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 251 | Flow: 0 | FF: 0.533 | PDRN: 1.000
+2026-07-13 14:50:57,647 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 252 | Flow: 0 | FF: 0.571 | PDRN: 1.000
+2026-07-13 14:50:57,647 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 257 | Flow: 0 | FF: 0.545 | PDRN: 1.000
+2026-07-13 14:50:57,647 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 258 | Flow: 0 | FF: 0.889 | PDRN: 1.000
+2026-07-13 14:50:57,647 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 259 | Flow: 0 | FF: 0.778 | PDRN: 1.000
+2026-07-13 14:50:57,648 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 1 | FF: 0.833 | PDRN: 1.000
+2026-07-13 14:50:57,648 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 248 | Flow: 1 | FF: 0.667 | PDRN: 1.000
+2026-07-13 14:50:57,648 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 270 | Flow: 1 | FF: 0.778 | PDRN: 1.000
+2026-07-13 14:50:57,648 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 279 | Flow: 1 | FF: 0.556 | PDRN: 1.000
+2026-07-13 14:50:57,648 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 280 | Flow: 1 | FF: 0.833 | PDRN: 1.000
+2026-07-13 14:50:57,648 | INFO | Cycle 1: saved 16 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 14:50:57,649 | INFO | Cycle 1: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_1.csv
+2026-07-13 14:54:51,335 | INFO | Attack sentinel detected: vanet_attack_ready_2 → cycle 2
+2026-07-13 14:54:51,561 | INFO | ==================================================
+2026-07-13 14:54:51,561 | INFO | Attack detection cycle 2
+2026-07-13 14:54:51,562 | INFO | Cycle 2: read metrics for 66 nodes
+2026-07-13 14:54:51,562 | INFO | Cycle 2: invoking attack detection...
+2026-07-13 14:54:51,901 | INFO | DetectAttacks success | Cycle: 2 | Detections: 17
+2026-07-13 14:54:51,903 | INFO | Cycle 2: wrote detection summary for 46 nodes to /tmp/ai_agent/detection_summery_cycle_2.csv
+2026-07-13 14:54:51,903 | WARNING | Cycle 2: ⚠ 17 attack(s) detected!
+2026-07-13 14:54:51,903 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 3 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 14:54:51,904 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 129 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 14:54:51,906 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 141 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 14:54:51,906 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 14:54:51,906 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 180 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 14:54:51,907 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 240 | Flow: 0 | FF: 0.714 | PDRN: 1.000
+2026-07-13 14:54:51,907 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 247 | Flow: 0 | FF: 0.667 | PDRN: 1.000
+2026-07-13 14:54:51,907 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 249 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 14:54:51,907 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 251 | Flow: 0 | FF: 0.533 | PDRN: 1.000
+2026-07-13 14:54:51,908 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 252 | Flow: 0 | FF: 0.571 | PDRN: 1.000
+2026-07-13 14:54:51,908 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 259 | Flow: 0 | FF: 0.778 | PDRN: 1.000
+2026-07-13 14:54:51,908 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 269 | Flow: 0 | FF: 0.538 | PDRN: 1.000
+2026-07-13 14:54:51,908 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 62 | Flow: 1 | FF: 0.846 | PDRN: 1.000
+2026-07-13 14:54:51,918 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 240 | Flow: 1 | FF: 0.800 | PDRN: 1.000
+2026-07-13 14:54:51,918 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 241 | Flow: 1 | FF: 0.800 | PDRN: 1.000
+2026-07-13 14:54:51,918 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 262 | Flow: 1 | FF: 0.727 | PDRN: 1.000
+2026-07-13 14:54:51,918 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 273 | Flow: 1 | FF: 0.526 | PDRN: 1.000
+2026-07-13 14:54:51,919 | INFO | Cycle 2: saved 17 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 14:54:51,920 | INFO | Cycle 2: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_2.csv
+2026-07-13 14:59:25,384 | INFO | Attack sentinel detected: vanet_attack_ready_3 → cycle 3
+2026-07-13 14:59:25,485 | INFO | ==================================================
+2026-07-13 14:59:25,485 | INFO | Attack detection cycle 3
+2026-07-13 14:59:25,486 | INFO | Cycle 3: read metrics for 56 nodes
+2026-07-13 14:59:25,486 | INFO | Cycle 3: invoking attack detection...
+2026-07-13 14:59:25,979 | INFO | DetectAttacks success | Cycle: 3 | Detections: 5
+2026-07-13 14:59:25,980 | INFO | Cycle 3: wrote detection summary for 50 nodes to /tmp/ai_agent/detection_summery_cycle_3.csv
+2026-07-13 14:59:25,980 | WARNING | Cycle 3: ⚠ 5 attack(s) detected!
+2026-07-13 14:59:25,980 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 0 | FF: 0.800 | PDRN: 1.000
+2026-07-13 14:59:25,980 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 14:59:25,980 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 258 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 14:59:25,981 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 259 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 14:59:25,981 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 268 | Flow: 0 | FF: 0.571 | PDRN: 1.000
+2026-07-13 14:59:25,981 | INFO | Cycle 3: saved 5 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 14:59:25,982 | INFO | Cycle 3: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_3.csv
+2026-07-13 15:06:48,298 | INFO | Attack sentinel detected: vanet_attack_ready_4 → cycle 4
+2026-07-13 15:06:48,402 | INFO | ==================================================
+2026-07-13 15:06:48,408 | INFO | Attack detection cycle 4
+2026-07-13 15:06:48,418 | INFO | Cycle 4: read metrics for 68 nodes
+2026-07-13 15:06:48,418 | INFO | Cycle 4: invoking attack detection...
+2026-07-13 15:06:48,694 | INFO | DetectAttacks success | Cycle: 4 | Detections: 10
+2026-07-13 15:06:48,699 | INFO | Cycle 4: wrote detection summary for 65 nodes to /tmp/ai_agent/detection_summery_cycle_4.csv
+2026-07-13 15:06:48,699 | WARNING | Cycle 4: ⚠ 10 attack(s) detected!
+2026-07-13 15:06:48,704 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 78 | Flow: 0 | FF: 0.800 | PDRN: 1.000
+2026-07-13 15:06:48,704 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 111 | Flow: 0 | FF: 0.545 | PDRN: 1.000
+2026-07-13 15:06:48,704 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 141 | Flow: 0 | FF: 0.800 | PDRN: 1.000
+2026-07-13 15:06:48,705 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 15:06:48,705 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 247 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 15:06:48,705 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 250 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 15:06:48,705 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 257 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 15:06:48,705 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 269 | Flow: 0 | FF: 0.800 | PDRN: 1.000
+2026-07-13 15:06:48,705 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 95 | Flow: 1 | FF: 0.727 | PDRN: 1.000
+2026-07-13 15:06:48,705 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 102 | Flow: 1 | FF: 0.714 | PDRN: 1.000
+2026-07-13 15:06:48,707 | INFO | Cycle 4: saved 10 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 15:06:48,708 | INFO | Cycle 4: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_4.csv
+2026-07-13 15:13:25,370 | INFO | Attack sentinel detected: vanet_attack_ready_5 → cycle 5
+2026-07-13 15:13:25,485 | INFO | ==================================================
+2026-07-13 15:13:25,486 | INFO | Attack detection cycle 5
+2026-07-13 15:13:25,487 | INFO | Cycle 5: read metrics for 41 nodes
+2026-07-13 15:13:25,487 | INFO | Cycle 5: invoking attack detection...
+2026-07-13 15:13:25,867 | INFO | DetectAttacks success | Cycle: 5 | Detections: 1
+2026-07-13 15:13:25,867 | INFO | Cycle 5: wrote detection summary for 39 nodes to /tmp/ai_agent/detection_summery_cycle_5.csv
+2026-07-13 15:13:25,868 | WARNING | Cycle 5: ⚠ 1 attack(s) detected!
+2026-07-13 15:13:25,868 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 57 | Flow: 1 | FF: 0.600 | PDRN: 1.000
+2026-07-13 15:13:25,868 | INFO | Cycle 5: saved 1 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 15:13:25,868 | INFO | Cycle 5: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_5.csv
+2026-07-13 15:18:56,394 | INFO | Attack sentinel detected: vanet_attack_ready_6 → cycle 6
+2026-07-13 15:18:56,497 | INFO | ==================================================
+2026-07-13 15:18:56,497 | INFO | Attack detection cycle 6
+2026-07-13 15:18:56,498 | INFO | Cycle 6: read metrics for 46 nodes
+2026-07-13 15:18:56,502 | INFO | Cycle 6: invoking attack detection...
+2026-07-13 15:18:56,763 | INFO | DetectAttacks success | Cycle: 6 | Detections: 3
+2026-07-13 15:18:56,764 | INFO | Cycle 6: wrote detection summary for 36 nodes to /tmp/ai_agent/detection_summery_cycle_6.csv
+2026-07-13 15:18:56,766 | WARNING | Cycle 6: ⚠ 3 attack(s) detected!
+2026-07-13 15:18:56,766 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 78 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 15:18:56,766 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 258 | Flow: 0 | FF: 0.522 | PDRN: 1.000
+2026-07-13 15:18:56,766 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 229 | Flow: 1 | FF: 0.833 | PDRN: 1.000
+2026-07-13 15:18:56,767 | INFO | Cycle 6: saved 3 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 15:18:56,768 | INFO | Cycle 6: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_6.csv
+2026-07-13 15:24:49,166 | INFO | Attack sentinel detected: vanet_attack_ready_7 → cycle 7
+2026-07-13 15:24:49,270 | INFO | ==================================================
+2026-07-13 15:24:49,271 | INFO | Attack detection cycle 7
+2026-07-13 15:24:49,274 | INFO | Cycle 7: read metrics for 72 nodes
+2026-07-13 15:24:49,275 | INFO | Cycle 7: invoking attack detection...
+2026-07-13 15:24:49,486 | INFO | DetectAttacks success | Cycle: 7 | Detections: 7
+2026-07-13 15:24:49,487 | INFO | Cycle 7: wrote detection summary for 53 nodes to /tmp/ai_agent/detection_summery_cycle_7.csv
+2026-07-13 15:24:49,487 | WARNING | Cycle 7: ⚠ 7 attack(s) detected!
+2026-07-13 15:24:49,487 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 41 | Flow: 0 | FF: 0.688 | PDRN: 1.000
+2026-07-13 15:24:49,488 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 78 | Flow: 0 | FF: 0.714 | PDRN: 1.000
+2026-07-13 15:24:49,488 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 152 | Flow: 0 | FF: 0.625 | PDRN: 1.000
+2026-07-13 15:24:49,488 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 262 | Flow: 0 | FF: 0.875 | PDRN: 1.000
+2026-07-13 15:24:49,488 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 70 | Flow: 1 | FF: 0.833 | PDRN: 1.000
+2026-07-13 15:24:49,488 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 195 | Flow: 1 | FF: 0.714 | PDRN: 1.000
+2026-07-13 15:24:49,488 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 252 | Flow: 1 | FF: 0.875 | PDRN: 1.000
+2026-07-13 15:24:49,489 | INFO | Cycle 7: saved 7 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 15:24:49,489 | INFO | Cycle 7: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_7.csv
+2026-07-13 15:38:50,089 | INFO | VANET Attack Detector starting...
+2026-07-13 15:38:50,090 | INFO | Watching directory: /tmp/ai_agent
+2026-07-13 15:38:50,090 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-07-13 15:38:50,090 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-07-13 15:38:50,091 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-07-13 15:58:39,901 | INFO | Attack sentinel detected: vanet_attack_ready_1 → cycle 1
+2026-07-13 15:58:40,005 | INFO | ==================================================
+2026-07-13 15:58:40,006 | INFO | Attack detection cycle 1
+2026-07-13 15:58:40,006 | INFO | Cycle 1: read metrics for 78 nodes
+2026-07-13 15:58:40,006 | INFO | Cycle 1: invoking attack detection...
+2026-07-13 15:58:40,358 | INFO | DetectAttacks success | Cycle: 1 | Detections: 17
+2026-07-13 15:58:40,359 | INFO | Cycle 1: wrote detection summary for 63 nodes to /tmp/ai_agent/detection_summery_cycle_1.csv
+2026-07-13 15:58:40,360 | WARNING | Cycle 1: ⚠ 17 attack(s) detected!
+2026-07-13 15:58:40,360 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 3 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 15:58:40,360 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 122 | Flow: 0 | FF: 0.833 | PDRN: 0.167
+2026-07-13 15:58:40,361 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 15:58:40,361 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 162 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 15:58:40,361 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 15:58:40,361 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 240 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 15:58:40,362 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 247 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 15:58:40,362 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 249 | Flow: 0 | FF: 0.875 | PDRN: 1.000
+2026-07-13 15:58:40,362 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 251 | Flow: 0 | FF: 0.533 | PDRN: 1.000
+2026-07-13 15:58:40,363 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 252 | Flow: 0 | FF: 0.571 | PDRN: 1.000
+2026-07-13 15:58:40,363 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 257 | Flow: 0 | FF: 0.545 | PDRN: 1.000
+2026-07-13 15:58:40,363 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 55 | Flow: 1 | FF: 0.700 | PDRN: 0.300
+2026-07-13 15:58:40,363 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 1 | FF: 0.833 | PDRN: 1.000
+2026-07-13 15:58:40,364 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 248 | Flow: 1 | FF: 0.667 | PDRN: 1.000
+2026-07-13 15:58:40,364 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 270 | Flow: 1 | FF: 0.778 | PDRN: 1.000
+2026-07-13 15:58:40,364 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 279 | Flow: 1 | FF: 0.556 | PDRN: 1.000
+2026-07-13 15:58:40,364 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 280 | Flow: 1 | FF: 0.833 | PDRN: 1.000
+2026-07-13 15:58:40,365 | INFO | Cycle 1: saved 17 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 15:58:40,366 | INFO | Cycle 1: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_1.csv
+2026-07-13 16:02:49,066 | INFO | Attack sentinel detected: vanet_attack_ready_2 → cycle 2
+2026-07-13 16:02:49,172 | INFO | ==================================================
+2026-07-13 16:02:49,173 | INFO | Attack detection cycle 2
+2026-07-13 16:02:49,173 | INFO | Cycle 2: read metrics for 74 nodes
+2026-07-13 16:02:49,173 | INFO | Cycle 2: invoking attack detection...
+2026-07-13 16:02:49,483 | INFO | DetectAttacks success | Cycle: 2 | Detections: 16
+2026-07-13 16:02:49,488 | INFO | Cycle 2: wrote detection summary for 54 nodes to /tmp/ai_agent/detection_summery_cycle_2.csv
+2026-07-13 16:02:49,489 | WARNING | Cycle 2: ⚠ 16 attack(s) detected!
+2026-07-13 16:02:49,490 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 3 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 16:02:49,490 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 122 | Flow: 0 | FF: 0.857 | PDRN: 0.143
+2026-07-13 16:02:49,491 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 16:02:49,491 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 162 | Flow: 0 | FF: 0.714 | PDRN: 1.000
+2026-07-13 16:02:49,492 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 16:02:49,492 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 198 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 16:02:49,492 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 247 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 16:02:49,492 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 248 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 16:02:49,492 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 249 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 16:02:49,493 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 251 | Flow: 0 | FF: 0.533 | PDRN: 1.000
+2026-07-13 16:02:49,493 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 252 | Flow: 0 | FF: 0.571 | PDRN: 1.000
+2026-07-13 16:02:49,493 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 41 | Flow: 1 | FF: 0.750 | PDRN: 1.000
+2026-07-13 16:02:49,493 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 152 | Flow: 1 | FF: 0.625 | PDRN: 1.000
+2026-07-13 16:02:49,493 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 240 | Flow: 1 | FF: 0.800 | PDRN: 1.000
+2026-07-13 16:02:49,493 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 241 | Flow: 1 | FF: 0.800 | PDRN: 1.000
+2026-07-13 16:02:49,494 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 273 | Flow: 1 | FF: 0.526 | PDRN: 1.000
+2026-07-13 16:02:49,495 | INFO | Cycle 2: saved 16 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 16:02:49,497 | INFO | Cycle 2: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_2.csv
+2026-07-13 16:06:42,048 | INFO | Attack sentinel detected: vanet_attack_ready_3 → cycle 3
+2026-07-13 16:06:42,149 | INFO | ==================================================
+2026-07-13 16:06:42,149 | INFO | Attack detection cycle 3
+2026-07-13 16:06:42,150 | INFO | Cycle 3: read metrics for 64 nodes
+2026-07-13 16:06:42,150 | INFO | Cycle 3: invoking attack detection...
+2026-07-13 16:06:42,405 | INFO | DetectAttacks success | Cycle: 3 | Detections: 9
+2026-07-13 16:06:42,406 | INFO | Cycle 3: wrote detection summary for 52 nodes to /tmp/ai_agent/detection_summery_cycle_3.csv
+2026-07-13 16:06:42,406 | WARNING | Cycle 3: ⚠ 9 attack(s) detected!
+2026-07-13 16:06:42,406 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 67 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 16:06:42,406 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 180 | Flow: 0 | FF: 0.889 | PDRN: 1.000
+2026-07-13 16:06:42,406 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 259 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 16:06:42,406 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 268 | Flow: 0 | FF: 0.765 | PDRN: 1.000
+2026-07-13 16:06:42,406 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 271 | Flow: 0 | FF: 0.600 | PDRN: 1.000
+2026-07-13 16:06:42,406 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 6 | Flow: 1 | FF: 0.667 | PDRN: 0.333
+2026-07-13 16:06:42,406 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 121 | Flow: 1 | FF: 0.875 | PDRN: 0.125
+2026-07-13 16:06:42,406 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 1 | FF: 0.857 | PDRN: 1.000
+2026-07-13 16:06:42,407 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 241 | Flow: 1 | FF: 0.571 | PDRN: 1.000
+2026-07-13 16:06:42,407 | INFO | Cycle 3: saved 9 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 16:06:42,407 | INFO | Cycle 3: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_3.csv
+2026-07-13 16:12:33,731 | INFO | Attack sentinel detected: vanet_attack_ready_4 → cycle 4
+2026-07-13 16:12:33,832 | INFO | ==================================================
+2026-07-13 16:12:33,833 | INFO | Attack detection cycle 4
+2026-07-13 16:12:33,834 | INFO | Cycle 4: read metrics for 63 nodes
+2026-07-13 16:12:33,834 | INFO | Cycle 4: invoking attack detection...
+2026-07-13 16:12:33,996 | INFO | DetectAttacks success | Cycle: 4 | Detections: 7
+2026-07-13 16:12:33,997 | INFO | Cycle 4: wrote detection summary for 62 nodes to /tmp/ai_agent/detection_summery_cycle_4.csv
+2026-07-13 16:12:33,998 | WARNING | Cycle 4: ⚠ 7 attack(s) detected!
+2026-07-13 16:12:33,998 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 78 | Flow: 0 | FF: 0.800 | PDRN: 1.000
+2026-07-13 16:12:33,998 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 146 | Flow: 0 | FF: 0.625 | PDRN: 1.000
+2026-07-13 16:12:33,998 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 162 | Flow: 0 | FF: 0.571 | PDRN: 1.000
+2026-07-13 16:12:33,998 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 0 | FF: 0.833 | PDRN: 1.000
+2026-07-13 16:12:33,998 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 250 | Flow: 0 | FF: 0.750 | PDRN: 1.000
+2026-07-13 16:12:33,998 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 95 | Flow: 1 | FF: 0.727 | PDRN: 1.000
+2026-07-13 16:12:33,998 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 115 | Flow: 1 | FF: 0.541 | PDRN: 0.059
+2026-07-13 16:12:33,999 | INFO | Cycle 4: saved 7 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 16:12:34,000 | INFO | Cycle 4: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_4.csv
+2026-07-13 16:19:36,666 | INFO | Attack sentinel detected: vanet_attack_ready_5 → cycle 5
+2026-07-13 16:19:36,767 | INFO | ==================================================
+2026-07-13 16:19:36,767 | INFO | Attack detection cycle 5
+2026-07-13 16:19:36,770 | INFO | Cycle 5: read metrics for 54 nodes
+2026-07-13 16:19:36,770 | INFO | Cycle 5: invoking attack detection...
+2026-07-13 16:19:37,080 | INFO | DetectAttacks success | Cycle: 5 | Detections: 7
+2026-07-13 16:19:37,082 | INFO | Cycle 5: wrote detection summary for 51 nodes to /tmp/ai_agent/detection_summery_cycle_5.csv
+2026-07-13 16:19:37,083 | WARNING | Cycle 5: ⚠ 7 attack(s) detected!
+2026-07-13 16:19:37,083 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 6 | Flow: 0 | FF: 0.900 | PDRN: 0.100
+2026-07-13 16:19:37,084 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 111 | Flow: 0 | FF: 0.583 | PDRN: 1.000
+2026-07-13 16:19:37,084 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 152 | Flow: 0 | FF: 0.667 | PDRN: 1.000
+2026-07-13 16:19:37,084 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 241 | Flow: 0 | FF: 0.571 | PDRN: 1.000
+2026-07-13 16:19:37,084 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 10 | Flow: 1 | FF: 0.615 | PDRN: 1.000
+2026-07-13 16:19:37,084 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 261 | Flow: 1 | FF: 0.667 | PDRN: 0.333
+2026-07-13 16:19:37,084 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 271 | Flow: 1 | FF: 0.857 | PDRN: 1.000
+2026-07-13 16:19:37,085 | INFO | Cycle 5: saved 7 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 16:19:37,088 | INFO | Cycle 5: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_5.csv
+2026-07-13 16:25:03,373 | INFO | Attack sentinel detected: vanet_attack_ready_6 → cycle 6
+2026-07-13 16:25:03,477 | INFO | ==================================================
+2026-07-13 16:25:03,478 | INFO | Attack detection cycle 6
+2026-07-13 16:25:03,478 | INFO | Cycle 6: read metrics for 53 nodes
+2026-07-13 16:25:03,478 | INFO | Cycle 6: invoking attack detection...
+2026-07-13 16:25:03,777 | INFO | DetectAttacks success | Cycle: 6 | Detections: 4
+2026-07-13 16:25:03,777 | INFO | Cycle 6: wrote detection summary for 42 nodes to /tmp/ai_agent/detection_summery_cycle_6.csv
+2026-07-13 16:25:03,777 | WARNING | Cycle 6: ⚠ 4 attack(s) detected!
+2026-07-13 16:25:03,777 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 194 | Flow: 0 | FF: 0.545 | PDRN: 1.000
+2026-07-13 16:25:03,778 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 258 | Flow: 0 | FF: 0.545 | PDRN: 1.000
+2026-07-13 16:25:03,778 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 125 | Flow: 1 | FF: 0.857 | PDRN: 1.000
+2026-07-13 16:25:03,778 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 240 | Flow: 1 | FF: 0.778 | PDRN: 1.000
+2026-07-13 16:25:03,778 | INFO | Cycle 6: saved 4 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 16:25:03,778 | INFO | Cycle 6: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_6.csv
+2026-07-13 16:30:49,302 | INFO | Attack sentinel detected: vanet_attack_ready_7 → cycle 7
+2026-07-13 16:30:49,428 | INFO | ==================================================
+2026-07-13 16:30:49,428 | INFO | Attack detection cycle 7
+2026-07-13 16:30:49,430 | INFO | Cycle 7: read metrics for 64 nodes
+2026-07-13 16:30:49,431 | INFO | Cycle 7: invoking attack detection...
+2026-07-13 16:30:49,675 | INFO | DetectAttacks success | Cycle: 7 | Detections: 3
+2026-07-13 16:30:49,676 | INFO | Cycle 7: wrote detection summary for 47 nodes to /tmp/ai_agent/detection_summery_cycle_7.csv
+2026-07-13 16:30:49,676 | WARNING | Cycle 7: ⚠ 3 attack(s) detected!
+2026-07-13 16:30:49,676 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 38 | Flow: 0 | FF: 0.833 | PDRN: 0.167
+2026-07-13 16:30:49,676 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 70 | Flow: 1 | FF: 0.833 | PDRN: 1.000
+2026-07-13 16:30:49,676 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 132 | Flow: 1 | FF: 0.750 | PDRN: 1.000
+2026-07-13 16:30:49,677 | INFO | Cycle 7: saved 3 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 16:30:49,679 | INFO | Cycle 7: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_7.csv
+2026-07-13 16:40:27,763 | INFO | Attack sentinel detected: vanet_attack_ready_8 → cycle 8
+2026-07-13 16:40:27,950 | INFO | ==================================================
+2026-07-13 16:40:27,950 | INFO | Attack detection cycle 8
+2026-07-13 16:40:27,951 | INFO | Cycle 8: read metrics for 54 nodes
+2026-07-13 16:40:27,951 | INFO | Cycle 8: invoking attack detection...
+2026-07-13 16:40:28,203 | INFO | DetectAttacks success | Cycle: 8 | Detections: 3
+2026-07-13 16:40:28,203 | INFO | Cycle 8: wrote detection summary for 38 nodes to /tmp/ai_agent/detection_summery_cycle_8.csv
+2026-07-13 16:40:28,203 | WARNING | Cycle 8: ⚠ 3 attack(s) detected!
+2026-07-13 16:40:28,203 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 193 | Flow: 0 | FF: 0.714 | PDRN: 1.000
+2026-07-13 16:40:28,203 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 198 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 16:40:28,203 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 230 | Flow: 1 | FF: 0.667 | PDRN: 1.000
+2026-07-13 16:40:28,204 | INFO | Cycle 8: saved 3 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 16:40:28,204 | INFO | Cycle 8: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_8.csv
+2026-07-13 16:58:22,585 | INFO | VANET Attack Detector starting...
+2026-07-13 16:58:22,586 | INFO | Watching directory: /tmp/ai_agent
+2026-07-13 16:58:22,586 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-07-13 16:58:22,586 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-07-13 16:58:22,588 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-07-13 17:06:48,039 | INFO | VANET Attack Detector starting...
+2026-07-13 17:06:48,047 | INFO | Watching directory: /tmp/ai_agent
+2026-07-13 17:06:48,048 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-07-13 17:06:48,048 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-07-13 17:06:48,068 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-07-13 17:15:18,629 | INFO | Attack sentinel detected: vanet_attack_ready_1 → cycle 1
+2026-07-13 17:15:18,750 | INFO | ==================================================
+2026-07-13 17:15:18,750 | INFO | Attack detection cycle 1
+2026-07-13 17:15:18,753 | INFO | Cycle 1: read metrics for 78 nodes
+2026-07-13 17:15:18,754 | INFO | Cycle 1: invoking attack detection...
+2026-07-13 17:15:18,988 | INFO | DetectAttacks success | Cycle: 1 | Detections: 4
+2026-07-13 17:15:18,989 | INFO | Cycle 1: wrote detection summary for 63 nodes to /tmp/ai_agent/detection_summery_cycle_1.csv
+2026-07-13 17:15:18,989 | WARNING | Cycle 1: ⚠ 4 attack(s) detected!
+2026-07-13 17:15:18,990 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 122 | Flow: 0 | FF: 0.833 | PDRN: 0.167
+2026-07-13 17:15:18,990 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 249 | Flow: 0 | FF: 0.875 | PDRN: 1.000
+2026-07-13 17:15:18,991 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 261 | Flow: 0 | FF: 0.043 | PDRN: 0.143
+2026-07-13 17:15:18,991 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 55 | Flow: 1 | FF: 0.700 | PDRN: 0.300
+2026-07-13 17:15:18,992 | INFO | Cycle 1: saved 4 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 17:15:18,993 | INFO | Cycle 1: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_1.csv
+2026-07-13 17:19:02,330 | INFO | Attack sentinel detected: vanet_attack_ready_2 → cycle 2
+2026-07-13 17:19:02,431 | INFO | ==================================================
+2026-07-13 17:19:02,431 | INFO | Attack detection cycle 2
+2026-07-13 17:19:02,432 | INFO | Cycle 2: read metrics for 74 nodes
+2026-07-13 17:19:02,432 | INFO | Cycle 2: invoking attack detection...
+2026-07-13 17:19:02,577 | INFO | DetectAttacks success | Cycle: 2 | Detections: 4
+2026-07-13 17:19:02,578 | INFO | Cycle 2: wrote detection summary for 54 nodes to /tmp/ai_agent/detection_summery_cycle_2.csv
+2026-07-13 17:19:02,578 | WARNING | Cycle 2: ⚠ 4 attack(s) detected!
+2026-07-13 17:19:02,578 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 122 | Flow: 0 | FF: 0.857 | PDRN: 0.143
+2026-07-13 17:19:02,578 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 198 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 17:19:02,578 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 249 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 17:19:02,578 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 261 | Flow: 0 | FF: 0.100 | PDRN: 0.200
+2026-07-13 17:19:02,578 | INFO | Cycle 2: saved 4 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 17:19:02,578 | INFO | Cycle 2: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_2.csv
+2026-07-13 17:22:55,210 | INFO | Attack sentinel detected: vanet_attack_ready_3 → cycle 3
+2026-07-13 17:22:55,311 | INFO | ==================================================
+2026-07-13 17:22:55,312 | INFO | Attack detection cycle 3
+2026-07-13 17:22:55,321 | INFO | Cycle 3: read metrics for 64 nodes
+2026-07-13 17:22:55,322 | INFO | Cycle 3: invoking attack detection...
+2026-07-13 17:22:55,551 | INFO | DetectAttacks success | Cycle: 3 | Detections: 6
+2026-07-13 17:22:55,554 | INFO | Cycle 3: wrote detection summary for 52 nodes to /tmp/ai_agent/detection_summery_cycle_3.csv
+2026-07-13 17:22:55,554 | WARNING | Cycle 3: ⚠ 6 attack(s) detected!
+2026-07-13 17:22:55,554 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 168 | Flow: 0 | FF: 0.028 | PDRN: 0.111
+2026-07-13 17:22:55,554 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 180 | Flow: 0 | FF: 0.889 | PDRN: 1.000
+2026-07-13 17:22:55,554 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 259 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 17:22:55,554 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 6 | Flow: 1 | FF: 0.667 | PDRN: 0.333
+2026-07-13 17:22:55,554 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 121 | Flow: 1 | FF: 0.875 | PDRN: 0.125
+2026-07-13 17:22:55,554 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 1 | FF: 0.857 | PDRN: 1.000
+2026-07-13 17:22:55,554 | INFO | Cycle 3: saved 6 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 17:22:55,555 | INFO | Cycle 3: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_3.csv
+2026-07-13 17:28:25,191 | INFO | Attack sentinel detected: vanet_attack_ready_4 → cycle 4
+2026-07-13 17:28:25,293 | INFO | ==================================================
+2026-07-13 17:28:25,293 | INFO | Attack detection cycle 4
+2026-07-13 17:28:25,294 | INFO | Cycle 4: read metrics for 63 nodes
+2026-07-13 17:28:25,294 | INFO | Cycle 4: invoking attack detection...
+2026-07-13 17:28:25,473 | INFO | DetectAttacks success | Cycle: 4 | Detections: 1
+2026-07-13 17:28:25,479 | INFO | Cycle 4: wrote detection summary for 62 nodes to /tmp/ai_agent/detection_summery_cycle_4.csv
+2026-07-13 17:28:25,481 | WARNING | Cycle 4: ⚠ 1 attack(s) detected!
+2026-07-13 17:28:25,482 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 115 | Flow: 1 | FF: 0.541 | PDRN: 0.059
+2026-07-13 17:28:25,483 | INFO | Cycle 4: saved 1 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 17:28:25,486 | INFO | Cycle 4: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_4.csv
+2026-07-13 17:34:57,592 | INFO | Attack sentinel detected: vanet_attack_ready_5 → cycle 5
+2026-07-13 17:34:57,706 | INFO | ==================================================
+2026-07-13 17:34:57,715 | INFO | Attack detection cycle 5
+2026-07-13 17:34:57,716 | INFO | Cycle 5: read metrics for 54 nodes
+2026-07-13 17:34:57,716 | INFO | Cycle 5: invoking attack detection...
+2026-07-13 17:34:57,999 | INFO | DetectAttacks success | Cycle: 5 | Detections: 4
+2026-07-13 17:34:58,000 | INFO | Cycle 5: wrote detection summary for 51 nodes to /tmp/ai_agent/detection_summery_cycle_5.csv
+2026-07-13 17:34:58,000 | WARNING | Cycle 5: ⚠ 4 attack(s) detected!
+2026-07-13 17:34:58,000 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 6 | Flow: 0 | FF: 0.900 | PDRN: 0.100
+2026-07-13 17:34:58,000 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 168 | Flow: 0 | FF: 0.253 | PDRN: 0.067
+2026-07-13 17:34:58,000 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 261 | Flow: 1 | FF: 0.667 | PDRN: 0.333
+2026-07-13 17:34:58,000 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 271 | Flow: 1 | FF: 0.857 | PDRN: 1.000
+2026-07-13 17:34:58,001 | INFO | Cycle 5: saved 4 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 17:34:58,001 | INFO | Cycle 5: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_5.csv
+2026-07-13 17:39:50,478 | INFO | Attack sentinel detected: vanet_attack_ready_6 → cycle 6
+2026-07-13 17:39:50,581 | INFO | ==================================================
+2026-07-13 17:39:50,582 | INFO | Attack detection cycle 6
+2026-07-13 17:39:50,584 | INFO | Cycle 6: read metrics for 53 nodes
+2026-07-13 17:39:50,584 | INFO | Cycle 6: invoking attack detection...
+2026-07-13 17:39:51,017 | INFO | DetectAttacks success | Cycle: 6 | Detections: 3
+2026-07-13 17:39:51,018 | INFO | Cycle 6: wrote detection summary for 42 nodes to /tmp/ai_agent/detection_summery_cycle_6.csv
+2026-07-13 17:39:51,027 | WARNING | Cycle 6: ⚠ 3 attack(s) detected!
+2026-07-13 17:39:51,027 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 125 | Flow: 1 | FF: 0.857 | PDRN: 1.000
+2026-07-13 17:39:51,028 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 143 | Flow: 1 | FF: 0.067 | PDRN: 0.333
+2026-07-13 17:39:51,028 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 218 | Flow: 1 | FF: 0.390 | PDRN: 0.077
+2026-07-13 17:39:51,030 | INFO | Cycle 6: saved 3 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 17:39:51,037 | INFO | Cycle 6: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_6.csv
+2026-07-13 17:45:34,126 | INFO | Attack sentinel detected: vanet_attack_ready_7 → cycle 7
+2026-07-13 17:45:34,227 | INFO | ==================================================
+2026-07-13 17:45:34,229 | INFO | Attack detection cycle 7
+2026-07-13 17:45:34,230 | INFO | Cycle 7: read metrics for 64 nodes
+2026-07-13 17:45:34,230 | INFO | Cycle 7: invoking attack detection...
+2026-07-13 17:45:34,507 | INFO | DetectAttacks success | Cycle: 7 | Detections: 1
+2026-07-13 17:45:34,513 | INFO | Cycle 7: wrote detection summary for 47 nodes to /tmp/ai_agent/detection_summery_cycle_7.csv
+2026-07-13 17:45:34,513 | WARNING | Cycle 7: ⚠ 1 attack(s) detected!
+2026-07-13 17:45:34,513 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 38 | Flow: 0 | FF: 0.833 | PDRN: 0.167
+2026-07-13 17:45:34,514 | INFO | Cycle 7: saved 1 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 17:45:34,514 | INFO | Cycle 7: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_7.csv
+2026-07-13 17:55:07,354 | INFO | Attack sentinel detected: vanet_attack_ready_8 → cycle 8
+2026-07-13 17:55:07,457 | INFO | ==================================================
+2026-07-13 17:55:07,457 | INFO | Attack detection cycle 8
+2026-07-13 17:55:07,457 | INFO | Cycle 8: read metrics for 54 nodes
+2026-07-13 17:55:07,458 | INFO | Cycle 8: invoking attack detection...
+2026-07-13 17:55:07,623 | INFO | DetectAttacks success | Cycle: 8 | Detections: 3
+2026-07-13 17:55:07,624 | INFO | Cycle 8: wrote detection summary for 38 nodes to /tmp/ai_agent/detection_summery_cycle_8.csv
+2026-07-13 17:55:07,624 | WARNING | Cycle 8: ⚠ 3 attack(s) detected!
+2026-07-13 17:55:07,624 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 198 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 17:55:07,624 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 261 | Flow: 0 | FF: 0.330 | PDRN: 0.125
+2026-07-13 17:55:07,624 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 239 | Flow: 1 | FF: 0.364 | PDRN: 0.053
+2026-07-13 17:55:07,624 | INFO | Cycle 8: saved 3 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 17:55:07,625 | INFO | Cycle 8: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_8.csv
+2026-07-13 19:27:11,523 | INFO | VANET Attack Detector starting...
+2026-07-13 19:27:11,537 | INFO | Watching directory: /tmp/ai_agent
+2026-07-13 19:27:11,537 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-07-13 19:27:11,537 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-07-13 19:27:11,599 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-07-13 19:46:39,110 | INFO | Attack sentinel detected: vanet_attack_ready_1 → cycle 1
+2026-07-13 19:46:39,212 | INFO | ==================================================
+2026-07-13 19:46:39,212 | INFO | Attack detection cycle 1
+2026-07-13 19:46:39,214 | INFO | Cycle 1: read metrics for 78 nodes
+2026-07-13 19:46:39,214 | INFO | Cycle 1: invoking attack detection...
+2026-07-13 19:46:39,689 | INFO | DetectAttacks success | Cycle: 1 | Detections: 4
+2026-07-13 19:46:39,695 | INFO | Cycle 1: wrote detection summary for 63 nodes to /tmp/ai_agent/detection_summery_cycle_1.csv
+2026-07-13 19:46:39,695 | WARNING | Cycle 1: ⚠ 4 attack(s) detected!
+2026-07-13 19:46:39,696 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 122 | Flow: 0 | FF: 0.833 | PDRN: 0.167
+2026-07-13 19:46:39,702 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 249 | Flow: 0 | FF: 0.875 | PDRN: 1.000
+2026-07-13 19:46:39,702 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 261 | Flow: 0 | FF: 0.043 | PDRN: 0.143
+2026-07-13 19:46:39,702 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 55 | Flow: 1 | FF: 0.700 | PDRN: 0.300
+2026-07-13 19:46:39,705 | INFO | Cycle 1: saved 4 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 19:46:39,705 | INFO | Cycle 1: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_1.csv
+2026-07-13 19:51:26,110 | INFO | Attack sentinel detected: vanet_attack_ready_2 → cycle 2
+2026-07-13 19:51:26,216 | INFO | ==================================================
+2026-07-13 19:51:26,217 | INFO | Attack detection cycle 2
+2026-07-13 19:51:26,217 | INFO | Cycle 2: read metrics for 74 nodes
+2026-07-13 19:51:26,229 | INFO | Cycle 2: invoking attack detection...
+2026-07-13 19:51:26,765 | INFO | DetectAttacks success | Cycle: 2 | Detections: 4
+2026-07-13 19:51:26,767 | INFO | Cycle 2: wrote detection summary for 54 nodes to /tmp/ai_agent/detection_summery_cycle_2.csv
+2026-07-13 19:51:26,768 | WARNING | Cycle 2: ⚠ 4 attack(s) detected!
+2026-07-13 19:51:26,768 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 122 | Flow: 0 | FF: 0.857 | PDRN: 0.143
+2026-07-13 19:51:26,768 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 198 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 19:51:26,768 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 249 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 19:51:26,768 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 261 | Flow: 0 | FF: 0.100 | PDRN: 0.200
+2026-07-13 19:51:26,769 | INFO | Cycle 2: saved 4 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 19:51:26,769 | INFO | Cycle 2: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_2.csv
+2026-07-13 19:58:17,346 | INFO | Attack sentinel detected: vanet_attack_ready_3 → cycle 3
+2026-07-13 19:58:17,450 | INFO | ==================================================
+2026-07-13 19:58:17,450 | INFO | Attack detection cycle 3
+2026-07-13 19:58:17,451 | INFO | Cycle 3: read metrics for 64 nodes
+2026-07-13 19:58:17,451 | INFO | Cycle 3: invoking attack detection...
+2026-07-13 19:58:18,150 | INFO | DetectAttacks success | Cycle: 3 | Detections: 6
+2026-07-13 19:58:18,152 | INFO | Cycle 3: wrote detection summary for 52 nodes to /tmp/ai_agent/detection_summery_cycle_3.csv
+2026-07-13 19:58:18,152 | WARNING | Cycle 3: ⚠ 6 attack(s) detected!
+2026-07-13 19:58:18,154 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 168 | Flow: 0 | FF: 0.028 | PDRN: 0.111
+2026-07-13 19:58:18,154 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 180 | Flow: 0 | FF: 0.889 | PDRN: 1.000
+2026-07-13 19:58:18,154 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 259 | Flow: 0 | FF: 0.857 | PDRN: 1.000
+2026-07-13 19:58:18,154 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 6 | Flow: 1 | FF: 0.667 | PDRN: 0.333
+2026-07-13 19:58:18,154 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 121 | Flow: 1 | FF: 0.875 | PDRN: 0.125
+2026-07-13 19:58:18,154 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 155 | Flow: 1 | FF: 0.857 | PDRN: 1.000
+2026-07-13 19:58:18,155 | INFO | Cycle 3: saved 6 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 19:58:18,156 | INFO | Cycle 3: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_3.csv
+2026-07-13 20:04:45,702 | INFO | Attack sentinel detected: vanet_attack_ready_4 → cycle 4
+2026-07-13 20:04:45,811 | INFO | ==================================================
+2026-07-13 20:04:45,812 | INFO | Attack detection cycle 4
+2026-07-13 20:04:45,812 | INFO | Cycle 4: read metrics for 63 nodes
+2026-07-13 20:04:45,812 | INFO | Cycle 4: invoking attack detection...
+2026-07-13 20:04:46,136 | INFO | DetectAttacks success | Cycle: 4 | Detections: 1
+2026-07-13 20:04:46,137 | INFO | Cycle 4: wrote detection summary for 62 nodes to /tmp/ai_agent/detection_summery_cycle_4.csv
+2026-07-13 20:04:46,137 | WARNING | Cycle 4: ⚠ 1 attack(s) detected!
+2026-07-13 20:04:46,137 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 115 | Flow: 1 | FF: 0.541 | PDRN: 0.059
+2026-07-13 20:04:46,138 | INFO | Cycle 4: saved 1 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 20:04:46,138 | INFO | Cycle 4: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_4.csv
+2026-07-13 20:11:56,000 | INFO | Attack sentinel detected: vanet_attack_ready_5 → cycle 5
+2026-07-13 20:11:56,101 | INFO | ==================================================
+2026-07-13 20:11:56,101 | INFO | Attack detection cycle 5
+2026-07-13 20:11:56,102 | INFO | Cycle 5: read metrics for 54 nodes
+2026-07-13 20:11:56,103 | INFO | Cycle 5: invoking attack detection...
+2026-07-13 20:11:56,802 | INFO | DetectAttacks success | Cycle: 5 | Detections: 4
+2026-07-13 20:11:56,803 | INFO | Cycle 5: wrote detection summary for 51 nodes to /tmp/ai_agent/detection_summery_cycle_5.csv
+2026-07-13 20:11:56,804 | WARNING | Cycle 5: ⚠ 4 attack(s) detected!
+2026-07-13 20:11:56,804 | WARNING |   🔴 INTERLEAVED JAMMING ATTACK | Node: 6 | Flow: 0 | FF: 0.900 | PDRN: 0.100
+2026-07-13 20:11:56,804 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 168 | Flow: 0 | FF: 0.253 | PDRN: 0.067
+2026-07-13 20:11:56,804 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 261 | Flow: 1 | FF: 0.667 | PDRN: 0.333
+2026-07-13 20:11:56,804 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 271 | Flow: 1 | FF: 0.857 | PDRN: 1.000
+2026-07-13 20:11:56,804 | INFO | Cycle 5: saved 4 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 20:11:56,804 | INFO | Cycle 5: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_5.csv
+2026-07-13 20:20:44,618 | INFO | Attack sentinel detected: vanet_attack_ready_6 → cycle 6
+2026-07-13 20:20:44,736 | INFO | ==================================================
+2026-07-13 20:20:44,737 | INFO | Attack detection cycle 6
+2026-07-13 20:20:44,738 | INFO | Cycle 6: read metrics for 53 nodes
+2026-07-13 20:20:44,738 | INFO | Cycle 6: invoking attack detection...
+2026-07-13 20:20:45,575 | INFO | DetectAttacks success | Cycle: 6 | Detections: 3
+2026-07-13 20:20:45,583 | INFO | Cycle 6: wrote detection summary for 42 nodes to /tmp/ai_agent/detection_summery_cycle_6.csv
+2026-07-13 20:20:45,583 | WARNING | Cycle 6: ⚠ 3 attack(s) detected!
+2026-07-13 20:20:45,583 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 125 | Flow: 1 | FF: 0.857 | PDRN: 1.000
+2026-07-13 20:20:45,583 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 143 | Flow: 1 | FF: 0.067 | PDRN: 0.333
+2026-07-13 20:20:45,583 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 218 | Flow: 1 | FF: 0.390 | PDRN: 0.077
+2026-07-13 20:20:45,587 | INFO | Cycle 6: saved 3 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-13 20:20:45,589 | INFO | Cycle 6: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_6.csv

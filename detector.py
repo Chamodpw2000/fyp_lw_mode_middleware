@@ -23,6 +23,13 @@ from fabric_client import detect_attacks
 # from WATCH_DIR (which still serves the vanet_ready_N middleware).
 ATTACK_WATCH_DIR = "/tmp/ai_agent"
 
+
+# Permanent CSV containing attackers detected across all cycles
+DETECTED_ATTACKERS_CSV = os.path.join(
+    ATTACK_WATCH_DIR,
+    "detected_attackers.csv"
+)
+
 # ─── Logging Setup ────────────────────────────────────────────────────────────
 logging.basicConfig(
     level=logging.INFO,
@@ -87,6 +94,160 @@ def load_metrics_from_csv(csv_file: str) -> dict:
     return {"sim_time": sim_time, "nodes": nodes}
 # ─── Core Processing Pipeline ─────────────────────────────────────────────────
 
+def save_detected_attackers(
+    cycle_id: int,
+    sim_time: float,
+    detections: list
+) -> None:
+    """
+    Appends detected attackers to detected_attackers.csv.
+
+    Each detected attacker is stored as a separate row.
+    The CSV file is created automatically if it does not exist.
+    """
+
+    if not detections:
+        return
+
+    os.makedirs(ATTACK_WATCH_DIR, exist_ok=True)
+
+    fieldnames = [
+        "cycle_id",
+        "sim_time_s",
+        "detected_at",
+        "node_id",
+        "flow_id",
+        "attack_type",
+        "flow_fraction",
+        "pdrn",
+    ]
+
+    file_exists = os.path.exists(DETECTED_ATTACKERS_CSV)
+    file_is_empty = file_exists and os.path.getsize(DETECTED_ATTACKERS_CSV) == 0
+
+    with open(
+        DETECTED_ATTACKERS_CSV,
+        "a",
+        newline="",
+        encoding="utf-8"
+    ) as csv_file:
+
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+        # Write the header only when creating a new or empty file
+        if not file_exists or file_is_empty:
+            writer.writeheader()
+
+        for detection in detections:
+            writer.writerow({
+                "cycle_id": cycle_id,
+                "sim_time_s": sim_time,
+                "detected_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+                "node_id": detection.get("node_id", ""),
+                "flow_id": detection.get("flow_id", ""),
+                "attack_type": detection.get("attack_type", ""),
+                "flow_fraction": detection.get("flow_fraction", ""),
+                "pdrn": detection.get("pdrn", ""),
+            })
+
+    logger.info(
+        f"Cycle {cycle_id}: saved {len(detections)} detection(s) "
+        f"to {DETECTED_ATTACKERS_CSV}"
+    )
+
+def save_cycle_detection_summary(
+    cycle_id: int,
+    nodes: list,
+    detections: list
+) -> None:
+    """
+    Creates one detection summary CSV for a single cycle.
+
+    Output columns:
+        node_id, detected, attack_type
+
+    detected:
+        1 = node was detected as an attacker
+        0 = node was not detected as an attacker
+
+    A node with no detected attack will have an empty attack_type.
+    """
+
+    summary_file = os.path.join(
+        ATTACK_WATCH_DIR,
+        f"detection_summery_cycle_{cycle_id}.csv"
+    )
+
+    # Store every unique node ID sent to DetectAttacks.
+    # The original input order is preserved.
+    node_ids = []
+    seen_node_ids = set()
+
+    for node in nodes:
+        node_id = int(node["node_id"])
+
+        if node_id not in seen_node_ids:
+            seen_node_ids.add(node_id)
+            node_ids.append(node_id)
+
+    # Build a mapping such as:
+    # {
+    #     3: ["Split_Path_Attack"],
+    #     10: ["Interleaved_Jamming_Attack"]
+    # }
+    detection_map = {}
+
+    for detection in detections or []:
+        node_id = int(detection["node_id"])
+        attack_type = str(
+            detection.get("attack_type", "Unknown_Attack")
+        )
+
+        detection_map.setdefault(node_id, [])
+
+        # Avoid writing the same attack type more than once
+        # for the same node.
+        if attack_type not in detection_map[node_id]:
+            detection_map[node_id].append(attack_type)
+
+    # "w" creates a new file or replaces the old file
+    # if the same cycle is processed again.
+    with open(
+        summary_file,
+        "w",
+        newline="",
+        encoding="utf-8"
+    ) as csv_file:
+
+        fieldnames = [
+            "node_id",
+            "detected",
+            "attack_type"
+        ]
+
+        writer = csv.DictWriter(
+            csv_file,
+            fieldnames=fieldnames
+        )
+
+        writer.writeheader()
+
+        for node_id in node_ids:
+            attack_types = detection_map.get(node_id, [])
+
+            writer.writerow({
+                "node_id": node_id,
+                "detected": 1 if attack_types else 0,
+                "attack_type": ";".join(attack_types),
+            })
+
+    logger.info(
+        f"Cycle {cycle_id}: wrote detection summary for "
+        f"{len(node_ids)} nodes to {summary_file}"
+    )
+
+
+
 def process_metrics(cycle_id: int, metrics_file: str, sentinel_file: str):
     """
     Full pipeline for attack detection in one cycle:
@@ -119,35 +280,63 @@ def process_metrics(cycle_id: int, metrics_file: str, sentinel_file: str):
         # ── Step 2: Invoke DetectAttacks chaincode ────────────────────────────
         logger.info(f"Cycle {cycle_id}: invoking attack detection...")
         detections = detect_attacks(cycle_id, sim_time, nodes)
-
-        # ── Step 3: Log results ───────────────────────────────────────────────
+        # Create one node-level detection summary CSV for this cycle.
+        #
+        # This is outside the "if not detections" condition so that the
+        # summary file is created even when no attacks are detected.
+        save_cycle_detection_summary(
+            cycle_id=cycle_id,
+            nodes=nodes,
+            detections=detections
+        )
+ 
+        # ── Step 3: Log and save results ─────────────────────────────────────
         if not detections:
-            logger.info(f"Cycle {cycle_id}: ✓ No attacks detected — all nodes clean")
+            logger.info(
+                f"Cycle {cycle_id}: ✓ No attacks detected — all nodes clean"
+            )
         else:
-            logger.warning(f"Cycle {cycle_id}: ⚠ {len(detections)} attack(s) detected!")
+            logger.warning(
+                f"Cycle {cycle_id}: ⚠ {len(detections)} attack(s) detected!"
+            )
+
             for d in detections:
-                label = ATTACK_LABELS.get(d['attack_type'], d['attack_type'])
+                attack_type = d.get("attack_type", "Unknown_Attack")
+                label = ATTACK_LABELS.get(attack_type, attack_type)
+
                 logger.warning(
                     f"  {label} | "
-                    f"Node: {d['node_id']} | "
-                    f"Flow: {d['flow_id']} | "
-                    f"FF: {d['flow_fraction']:.3f} | "
-                    f"PDRN: {d['pdrn']:.3f} | "
-                
+                    f"Node: {d.get('node_id', 'N/A')} | "
+                    f"Flow: {d.get('flow_id', 'N/A')} | "
+                    f"FF: {float(d.get('flow_fraction', 0.0)):.3f} | "
+                    f"PDRN: {float(d.get('pdrn', 0.0)):.3f}"
                 )
+
+            # Append all detections from this cycle to the permanent CSV
+            save_detected_attackers(
+                cycle_id=cycle_id,
+                sim_time=sim_time,
+                detections=detections
+            )
 
     except Exception as e:
         logger.error(f"Cycle {cycle_id}: detection error: {e}")
 
     finally:
-        # ── Step 4: Cleanup temp files ────────────────────────────────────────
-        for f in [metrics_file, sentinel_file]:
-            try:
-                if os.path.exists(f):
-                    os.remove(f)
-                    logger.debug(f"Cleaned up: {f}")
-            except Exception as e:
-                logger.warning(f"Could not remove {f}: {e}")
+        # ── Step 4: Cleanup sentinel only ────────────────────────────────────
+        # Keep ff_node_anomaly_scores_N.csv for later analysis.
+        try:
+            if os.path.exists(sentinel_file):
+                os.remove(sentinel_file)
+                logger.debug(f"Cleaned up sentinel: {sentinel_file}")
+        except Exception as e:
+            logger.warning(
+                f"Could not remove sentinel {sentinel_file}: {e}"
+            )
+
+        logger.info(
+            f"Cycle {cycle_id}: retained metrics CSV: {metrics_file}"
+        )
 
 
 # ─── File System Watcher ──────────────────────────────────────────────────────
@@ -195,6 +384,9 @@ class MetricsEventHandler(FileSystemEventHandler):
 
 def main():
     logger.info("VANET Attack Detector starting...")
+    # /tmp may be cleared after a reboot.
+    # Create the directory before glob() and Watchdog access it.
+    os.makedirs(ATTACK_WATCH_DIR, exist_ok=True)
     logger.info(f"Watching directory: {ATTACK_WATCH_DIR}")
     logger.info(f"Log file: {LOG_FILE}")
     logger.info(f"Sentinel pattern: vanet_attack_ready_N")
