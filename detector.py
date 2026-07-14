@@ -122,6 +122,7 @@ def save_detected_attackers(
         "attack_type",
         "flow_fraction",
         "pdrn",
+        "inbound_ratio"
     ]
 
     file_exists = os.path.exists(DETECTED_ATTACKERS_CSV)
@@ -150,6 +151,7 @@ def save_detected_attackers(
                 "attack_type": detection.get("attack_type", ""),
                 "flow_fraction": detection.get("flow_fraction", ""),
                 "pdrn": detection.get("pdrn", ""),
+                "inbound_ratio": detection.get("inbound_ratio", "")
             })
 
     logger.info(
@@ -177,7 +179,7 @@ def save_cycle_detection_summary(
 
     summary_file = os.path.join(
         ATTACK_WATCH_DIR,
-        f"detection_summery_cycle_{cycle_id}.csv"
+        f"detection_summary_cycle_{cycle_id}.csv"
     )
 
     # Store every unique node ID sent to DetectAttacks.
