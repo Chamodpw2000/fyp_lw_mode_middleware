@@ -44,7 +44,7 @@ logger = logging.getLogger(__name__)
 
 # ─── Attack Type Labels ───────────────────────────────────────────────────────
 ATTACK_LABELS = {
-    "Interleaved_Jamming_Attack": "🔴 INTERLEAVED JAMMING ATTACK",
+    "Interleaved_Jamming_Attack": "🔴 INTERLEAVED GRAY HOLE ATTACK",
     "Split_Path_Attack":          "🟠 SPLIT PATH ATTACK",
     "Flow_Stretching_Attack":     "🟡 FLOW STRETCHING ATTACK",
 }
@@ -62,12 +62,14 @@ def transform_csv_row(row: dict) -> dict:
     flow_id               → flow_id
     sum_abs_ff_deviation_normalized → flow_fraction
     node_pdr              → pdrn   (divided by 100)
+    inbound_ratio         → inbound_ratio
     """
     return {
         "node_id": int(row["node_id"]),
         "flow_id": int(row["flow_id"]),
         "flow_fraction": float(row["sum_abs_ff_deviation_normalized"]),
         "pdrn": float(row["node_pdr"]) / 100.0,
+        "inbound_ratio": float(row["inbound_ratio"])
     }
 
 

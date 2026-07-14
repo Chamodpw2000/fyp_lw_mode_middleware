@@ -32,7 +32,7 @@ def detect_attacks(cycle_id: int, sim_time: float, nodes: list) -> list:
     
     nodes is a list of dicts:
     [
-        {"node_id": 5, "flow_id": 1, "flow_fraction": 0.7, "pdrn": 0.6},
+        {"node_id": 5, "flow_id": 1, "flow_fraction": 0.7, "pdrn": 0.6 , "inbound_ratio": 0.5},
         ...
     ]
     
