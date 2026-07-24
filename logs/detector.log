@@ -3389,3 +3389,683 @@
 2026-07-18 14:15:30,914 | INFO | Cycle 28: wrote detection summary for 54 nodes to /tmp/ai_agent/detection_summary_cycle_28.csv
 2026-07-18 14:15:30,914 | INFO | Cycle 28: ✓ No attacks detected — all nodes clean
 2026-07-18 14:15:30,915 | INFO | Cycle 28: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_28.csv
+2026-07-24 07:54:19,090 | INFO | VANET Attack Detector starting...
+2026-07-24 07:54:19,091 | INFO | Watching directory: /tmp/ai_agent
+2026-07-24 07:54:19,093 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-07-24 07:54:19,093 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-07-24 07:54:19,093 | INFO | ns-3 control socket: /tmp/vanet_verify.sock
+2026-07-24 07:54:19,094 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-07-24 08:02:55,325 | INFO | Attack sentinel detected: vanet_attack_ready_1 → cycle 1
+2026-07-24 08:02:55,426 | INFO | ==================================================
+2026-07-24 08:02:55,427 | INFO | Attack detection cycle 1
+2026-07-24 08:02:55,428 | INFO | Cycle 1: read metrics for 70 nodes
+2026-07-24 08:02:55,429 | INFO | Cycle 1: invoking attack detection...
+2026-07-24 08:02:55,977 | INFO | DetectAttacks success | Cycle: 1 | Detections: 21
+2026-07-24 08:02:56,019 | INFO | Cycle 1: wrote detection summary for 70 nodes to /tmp/ai_agent/detection_summary_cycle_1.csv
+2026-07-24 08:02:56,021 | WARNING | Cycle 1: ⚠ 21 attack(s) detected!
+2026-07-24 08:02:56,021 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 12 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,021 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 38 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,022 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 41 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,022 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 75 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,022 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 118 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,022 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 122 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:02:56,022 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 123 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,022 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 130 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,022 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 143 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,022 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 168 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:02:56,022 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 240 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,022 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 268 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,022 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 274 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,022 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 5 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,023 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 141 | Flow: 1 | FF: 0.275 | PDRN: 0.059
+2026-07-24 08:02:56,023 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 169 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,023 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 182 | Flow: 1 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:02:56,023 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 197 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,023 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 236 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,024 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 249 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,024 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 258 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:02:56,029 | INFO | Cycle 1: saved 21 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 08:02:56,031 | WARNING | Cycle 1: requested revocation of routing node 12; ns-3 response: QUEUED:routing_node_id=12:global_id=14
+2026-07-24 08:02:56,046 | WARNING | Cycle 1: requested revocation of routing node 38; ns-3 response: QUEUED:routing_node_id=38:global_id=40
+2026-07-24 08:02:56,047 | WARNING | Cycle 1: requested revocation of routing node 41; ns-3 response: QUEUED:routing_node_id=41:global_id=43
+2026-07-24 08:02:56,047 | WARNING | Cycle 1: requested revocation of routing node 75; ns-3 response: QUEUED:routing_node_id=75:global_id=77
+2026-07-24 08:02:56,048 | WARNING | Cycle 1: requested revocation of routing node 118; ns-3 response: QUEUED:routing_node_id=118:global_id=120
+2026-07-24 08:02:56,048 | WARNING | Cycle 1: requested revocation of routing node 122; ns-3 response: QUEUED:routing_node_id=122:global_id=124
+2026-07-24 08:02:56,048 | WARNING | Cycle 1: requested revocation of routing node 123; ns-3 response: QUEUED:routing_node_id=123:global_id=125
+2026-07-24 08:02:56,057 | WARNING | Cycle 1: requested revocation of routing node 130; ns-3 response: QUEUED:routing_node_id=130:global_id=132
+2026-07-24 08:02:56,058 | WARNING | Cycle 1: requested revocation of routing node 143; ns-3 response: QUEUED:routing_node_id=143:global_id=145
+2026-07-24 08:02:56,058 | WARNING | Cycle 1: requested revocation of routing node 168; ns-3 response: QUEUED:routing_node_id=168:global_id=170
+2026-07-24 08:02:56,059 | WARNING | Cycle 1: requested revocation of routing node 240; ns-3 response: QUEUED:routing_node_id=240:global_id=242
+2026-07-24 08:02:56,059 | WARNING | Cycle 1: requested revocation of routing node 268; ns-3 response: QUEUED:routing_node_id=268:global_id=270
+2026-07-24 08:02:56,060 | WARNING | Cycle 1: requested revocation of routing node 274; ns-3 response: QUEUED:routing_node_id=274:global_id=276
+2026-07-24 08:02:56,061 | WARNING | Cycle 1: requested revocation of routing node 5; ns-3 response: QUEUED:routing_node_id=5:global_id=7
+2026-07-24 08:02:56,061 | WARNING | Cycle 1: requested revocation of routing node 141; ns-3 response: QUEUED:routing_node_id=141:global_id=143
+2026-07-24 08:02:56,061 | WARNING | Cycle 1: requested revocation of routing node 169; ns-3 response: QUEUED:routing_node_id=169:global_id=171
+2026-07-24 08:02:56,062 | WARNING | Cycle 1: requested revocation of routing node 182; ns-3 response: QUEUED:routing_node_id=182:global_id=184
+2026-07-24 08:02:56,062 | WARNING | Cycle 1: requested revocation of routing node 197; ns-3 response: QUEUED:routing_node_id=197:global_id=199
+2026-07-24 08:02:56,062 | WARNING | Cycle 1: requested revocation of routing node 236; ns-3 response: QUEUED:routing_node_id=236:global_id=238
+2026-07-24 08:02:56,066 | WARNING | Cycle 1: requested revocation of routing node 249; ns-3 response: QUEUED:routing_node_id=249:global_id=251
+2026-07-24 08:02:56,067 | WARNING | Cycle 1: requested revocation of routing node 258; ns-3 response: QUEUED:routing_node_id=258:global_id=260
+2026-07-24 08:02:56,068 | INFO | Cycle 1: revocation requests complete — successful=21, failed=0, unique_attackers=21
+2026-07-24 08:02:56,068 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:02:56,068 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 1
+2026-07-24 08:02:56,068 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:02:56,068 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 08:02:56,068 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:02:56,068 | INFO |   Interleaved Jamming        0     0     46    24   0.0000
+2026-07-24 08:02:56,069 | INFO |   Split Path                 9     9     52     0   0.6529
+2026-07-24 08:02:56,069 | INFO |   Flow Stretching            3     0     62     5   0.5891
+2026-07-24 08:02:56,069 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:02:56,069 | INFO | Cycle 1: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_1.csv
+2026-07-24 08:07:21,607 | INFO | Attack sentinel detected: vanet_attack_ready_2 → cycle 2
+2026-07-24 08:07:21,874 | INFO | ==================================================
+2026-07-24 08:07:21,876 | INFO | Attack detection cycle 2
+2026-07-24 08:07:21,879 | INFO | Cycle 2: read metrics for 31 nodes
+2026-07-24 08:07:21,879 | INFO | Cycle 2: invoking attack detection...
+2026-07-24 08:07:22,494 | INFO | DetectAttacks success | Cycle: 2 | Detections: 5
+2026-07-24 08:07:22,496 | INFO | Cycle 2: wrote detection summary for 31 nodes to /tmp/ai_agent/detection_summary_cycle_2.csv
+2026-07-24 08:07:22,497 | WARNING | Cycle 2: ⚠ 5 attack(s) detected!
+2026-07-24 08:07:22,497 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 30 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:07:22,497 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 111 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:07:22,498 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 155 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:07:22,498 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 195 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:07:22,499 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 251 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:07:22,500 | INFO | Cycle 2: saved 5 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 08:07:22,504 | WARNING | Cycle 2: requested revocation of routing node 30; ns-3 response: QUEUED:routing_node_id=30:global_id=32
+2026-07-24 08:07:22,536 | WARNING | Cycle 2: requested revocation of routing node 111; ns-3 response: QUEUED:routing_node_id=111:global_id=113
+2026-07-24 08:07:22,537 | WARNING | Cycle 2: requested revocation of routing node 155; ns-3 response: QUEUED:routing_node_id=155:global_id=157
+2026-07-24 08:07:22,538 | WARNING | Cycle 2: requested revocation of routing node 195; ns-3 response: QUEUED:routing_node_id=195:global_id=197
+2026-07-24 08:07:22,543 | WARNING | Cycle 2: requested revocation of routing node 251; ns-3 response: QUEUED:routing_node_id=251:global_id=253
+2026-07-24 08:07:22,544 | INFO | Cycle 2: revocation requests complete — successful=5, failed=0, unique_attackers=5
+2026-07-24 08:07:22,544 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:07:22,545 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 2
+2026-07-24 08:07:22,545 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:07:22,545 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 08:07:22,545 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:07:22,545 | INFO |   Interleaved Jamming        4     0     63    34   0.2615
+2026-07-24 08:07:22,546 | INFO |   Split Path                 9     9     83     0   0.6716
+2026-07-24 08:07:22,546 | INFO |   Flow Stretching            4     0     90     7   0.5809
+2026-07-24 08:07:22,547 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:07:22,547 | INFO | Cycle 2: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_2.csv
+2026-07-24 08:10:51,436 | INFO | Attack sentinel detected: vanet_attack_ready_3 → cycle 3
+2026-07-24 08:10:51,537 | INFO | ==================================================
+2026-07-24 08:10:51,538 | INFO | Attack detection cycle 3
+2026-07-24 08:10:51,538 | INFO | Cycle 3: read metrics for 48 nodes
+2026-07-24 08:10:51,539 | INFO | Cycle 3: invoking attack detection...
+2026-07-24 08:10:51,685 | INFO | DetectAttacks success | Cycle: 3 | Detections: 8
+2026-07-24 08:10:51,686 | INFO | Cycle 3: wrote detection summary for 48 nodes to /tmp/ai_agent/detection_summary_cycle_3.csv
+2026-07-24 08:10:51,686 | WARNING | Cycle 3: ⚠ 8 attack(s) detected!
+2026-07-24 08:10:51,686 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 27 | Flow: 0 | FF: 0.235 | PDRN: 0.167
+2026-07-24 08:10:51,686 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 34 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:10:51,686 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 42 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:10:51,687 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 151 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:10:51,687 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 198 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:10:51,687 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 228 | Flow: 0 | FF: 0.242 | PDRN: 0.111
+2026-07-24 08:10:51,687 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 257 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:10:51,688 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 262 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:10:51,688 | INFO | Cycle 3: saved 8 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 08:10:51,689 | WARNING | Cycle 3: requested revocation of routing node 27; ns-3 response: QUEUED:routing_node_id=27:global_id=29
+2026-07-24 08:10:51,690 | WARNING | Cycle 3: requested revocation of routing node 34; ns-3 response: QUEUED:routing_node_id=34:global_id=36
+2026-07-24 08:10:51,691 | WARNING | Cycle 3: requested revocation of routing node 42; ns-3 response: QUEUED:routing_node_id=42:global_id=44
+2026-07-24 08:10:51,691 | WARNING | Cycle 3: requested revocation of routing node 151; ns-3 response: QUEUED:routing_node_id=151:global_id=153
+2026-07-24 08:10:51,692 | WARNING | Cycle 3: requested revocation of routing node 198; ns-3 response: QUEUED:routing_node_id=198:global_id=200
+2026-07-24 08:10:51,692 | WARNING | Cycle 3: requested revocation of routing node 228; ns-3 response: QUEUED:routing_node_id=228:global_id=230
+2026-07-24 08:10:51,693 | WARNING | Cycle 3: requested revocation of routing node 257; ns-3 response: QUEUED:routing_node_id=257:global_id=259
+2026-07-24 08:10:51,693 | WARNING | Cycle 3: requested revocation of routing node 262; ns-3 response: QUEUED:routing_node_id=262:global_id=264
+2026-07-24 08:10:51,693 | INFO | Cycle 3: revocation requests complete — successful=8, failed=0, unique_attackers=8
+2026-07-24 08:10:51,694 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:10:51,694 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 3
+2026-07-24 08:10:51,694 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:10:51,694 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 08:10:51,694 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:10:51,694 | INFO |   Interleaved Jamming        6     0    105    38   0.3164
+2026-07-24 08:10:51,695 | INFO |   Split Path                13     9    127     0   0.7428
+2026-07-24 08:10:51,695 | INFO |   Flow Stretching            6     0    132    11   0.5708
+2026-07-24 08:10:51,695 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:10:51,695 | INFO | Cycle 3: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_3.csv
+2026-07-24 08:15:35,639 | INFO | Attack sentinel detected: vanet_attack_ready_4 → cycle 4
+2026-07-24 08:15:35,741 | INFO | ==================================================
+2026-07-24 08:15:35,741 | INFO | Attack detection cycle 4
+2026-07-24 08:15:35,742 | INFO | Cycle 4: read metrics for 92 nodes
+2026-07-24 08:15:35,742 | INFO | Cycle 4: invoking attack detection...
+2026-07-24 08:15:35,934 | INFO | DetectAttacks success | Cycle: 4 | Detections: 10
+2026-07-24 08:15:35,935 | INFO | Cycle 4: wrote detection summary for 70 nodes to /tmp/ai_agent/detection_summary_cycle_4.csv
+2026-07-24 08:15:35,936 | WARNING | Cycle 4: ⚠ 10 attack(s) detected!
+2026-07-24 08:15:35,936 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 31 | Flow: 0 | FF: 0.962 | PDRN: 1.077
+2026-07-24 08:15:35,936 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 72 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:15:35,936 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 127 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:15:35,936 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 152 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:15:35,936 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 188 | Flow: 0 | FF: 0.889 | PDRN: 0.111
+2026-07-24 08:15:35,936 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 261 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:15:35,936 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 72 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:15:35,936 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 127 | Flow: 1 | FF: 0.107 | PDRN: 0.250
+2026-07-24 08:15:35,936 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 138 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:15:35,936 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 279 | Flow: 1 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:15:35,937 | INFO | Cycle 4: saved 10 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 08:15:35,938 | WARNING | Cycle 4: requested revocation of routing node 31; ns-3 response: QUEUED:routing_node_id=31:global_id=33
+2026-07-24 08:15:35,939 | WARNING | Cycle 4: requested revocation of routing node 72; ns-3 response: QUEUED:routing_node_id=72:global_id=74
+2026-07-24 08:15:35,941 | WARNING | Cycle 4: requested revocation of routing node 127; ns-3 response: QUEUED:routing_node_id=127:global_id=129
+2026-07-24 08:15:35,942 | WARNING | Cycle 4: requested revocation of routing node 152; ns-3 response: QUEUED:routing_node_id=152:global_id=154
+2026-07-24 08:15:35,943 | WARNING | Cycle 4: requested revocation of routing node 188; ns-3 response: QUEUED:routing_node_id=188:global_id=190
+2026-07-24 08:15:35,953 | WARNING | Cycle 4: requested revocation of routing node 261; ns-3 response: QUEUED:routing_node_id=261:global_id=263
+2026-07-24 08:15:35,954 | WARNING | Cycle 4: requested revocation of routing node 138; ns-3 response: QUEUED:routing_node_id=138:global_id=140
+2026-07-24 08:15:35,954 | WARNING | Cycle 4: requested revocation of routing node 279; ns-3 response: QUEUED:routing_node_id=279:global_id=281
+2026-07-24 08:15:35,955 | INFO | Cycle 4: revocation requests complete — successful=8, failed=0, unique_attackers=8
+2026-07-24 08:15:35,955 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:15:35,955 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 4
+2026-07-24 08:15:35,955 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:15:35,955 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 08:15:35,955 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:15:35,955 | INFO |   Interleaved Jamming        8     0    171    40   0.3675
+2026-07-24 08:15:35,955 | INFO |   Split Path                17     9    193     0   0.7904
+2026-07-24 08:15:35,955 | INFO |   Flow Stretching            8     0    196    15   0.5684
+2026-07-24 08:15:35,955 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:15:35,955 | INFO | Cycle 4: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_4.csv
+2026-07-24 08:20:25,102 | INFO | Attack sentinel detected: vanet_attack_ready_5 → cycle 5
+2026-07-24 08:20:25,232 | INFO | ==================================================
+2026-07-24 08:20:25,232 | INFO | Attack detection cycle 5
+2026-07-24 08:20:25,233 | INFO | Cycle 5: read metrics for 108 nodes
+2026-07-24 08:20:25,233 | INFO | Cycle 5: invoking attack detection...
+2026-07-24 08:20:25,732 | INFO | DetectAttacks success | Cycle: 5 | Detections: 8
+2026-07-24 08:20:25,735 | INFO | Cycle 5: wrote detection summary for 97 nodes to /tmp/ai_agent/detection_summary_cycle_5.csv
+2026-07-24 08:20:25,738 | WARNING | Cycle 5: ⚠ 8 attack(s) detected!
+2026-07-24 08:20:25,738 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 1 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:20:25,738 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 67 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:20:25,738 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 183 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:20:25,738 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 239 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:20:25,738 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 36 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:20:25,738 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 84 | Flow: 1 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:20:25,738 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 89 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:20:25,738 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 239 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:20:25,738 | INFO | Cycle 5: saved 8 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 08:20:25,742 | WARNING | Cycle 5: requested revocation of routing node 1; ns-3 response: QUEUED:routing_node_id=1:global_id=3
+2026-07-24 08:20:25,759 | WARNING | Cycle 5: requested revocation of routing node 67; ns-3 response: QUEUED:routing_node_id=67:global_id=69
+2026-07-24 08:20:25,761 | WARNING | Cycle 5: requested revocation of routing node 183; ns-3 response: QUEUED:routing_node_id=183:global_id=185
+2026-07-24 08:20:25,762 | WARNING | Cycle 5: requested revocation of routing node 239; ns-3 response: QUEUED:routing_node_id=239:global_id=241
+2026-07-24 08:20:25,764 | WARNING | Cycle 5: requested revocation of routing node 36; ns-3 response: QUEUED:routing_node_id=36:global_id=38
+2026-07-24 08:20:25,765 | WARNING | Cycle 5: requested revocation of routing node 84; ns-3 response: QUEUED:routing_node_id=84:global_id=86
+2026-07-24 08:20:25,765 | WARNING | Cycle 5: requested revocation of routing node 89; ns-3 response: QUEUED:routing_node_id=89:global_id=91
+2026-07-24 08:20:25,765 | INFO | Cycle 5: revocation requests complete — successful=7, failed=0, unique_attackers=7
+2026-07-24 08:20:25,765 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:20:25,765 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 5
+2026-07-24 08:20:25,765 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:20:25,765 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 08:20:25,765 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:20:25,765 | INFO |   Interleaved Jamming       11     0    260    45   0.4092
+2026-07-24 08:20:25,765 | INFO |   Split Path                19    10    287     0   0.7957
+2026-07-24 08:20:25,765 | INFO |   Flow Stretching            9     0    285    22   0.5192
+2026-07-24 08:20:25,765 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:20:25,765 | INFO | Cycle 5: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_5.csv
+2026-07-24 08:25:05,382 | INFO | Attack sentinel detected: vanet_attack_ready_6 → cycle 6
+2026-07-24 08:25:05,486 | INFO | ==================================================
+2026-07-24 08:25:05,486 | INFO | Attack detection cycle 6
+2026-07-24 08:25:05,487 | INFO | Cycle 6: read metrics for 84 nodes
+2026-07-24 08:25:05,488 | INFO | Cycle 6: invoking attack detection...
+2026-07-24 08:25:05,762 | INFO | DetectAttacks success | Cycle: 6 | Detections: 6
+2026-07-24 08:25:05,763 | INFO | Cycle 6: wrote detection summary for 77 nodes to /tmp/ai_agent/detection_summary_cycle_6.csv
+2026-07-24 08:25:05,763 | WARNING | Cycle 6: ⚠ 6 attack(s) detected!
+2026-07-24 08:25:05,763 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 48 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:25:05,763 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 63 | Flow: 0 | FF: 0.652 | PDRN: 0.062
+2026-07-24 08:25:05,763 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 77 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:25:05,763 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 226 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:25:05,763 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 248 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:25:05,766 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 259 | Flow: 0 | FF: 0.900 | PDRN: 0.100
+2026-07-24 08:25:05,767 | INFO | Cycle 6: saved 6 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 08:25:05,768 | WARNING | Cycle 6: requested revocation of routing node 48; ns-3 response: QUEUED:routing_node_id=48:global_id=50
+2026-07-24 08:25:05,775 | WARNING | Cycle 6: requested revocation of routing node 63; ns-3 response: QUEUED:routing_node_id=63:global_id=65
+2026-07-24 08:25:05,779 | WARNING | Cycle 6: requested revocation of routing node 77; ns-3 response: QUEUED:routing_node_id=77:global_id=79
+2026-07-24 08:25:05,779 | WARNING | Cycle 6: requested revocation of routing node 226; ns-3 response: QUEUED:routing_node_id=226:global_id=228
+2026-07-24 08:25:05,780 | WARNING | Cycle 6: requested revocation of routing node 248; ns-3 response: QUEUED:routing_node_id=248:global_id=250
+2026-07-24 08:25:05,780 | WARNING | Cycle 6: requested revocation of routing node 259; ns-3 response: QUEUED:routing_node_id=259:global_id=261
+2026-07-24 08:25:05,780 | INFO | Cycle 6: revocation requests complete — successful=6, failed=0, unique_attackers=6
+2026-07-24 08:25:05,781 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:25:05,781 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 6
+2026-07-24 08:25:05,781 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:25:05,781 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 08:25:05,781 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:25:05,781 | INFO |   Interleaved Jamming       12     0    334    47   0.4223
+2026-07-24 08:25:05,781 | INFO |   Split Path                20    10    363     0   0.8055
+2026-07-24 08:25:05,782 | INFO |   Flow Stretching           13     0    355    25   0.5653
+2026-07-24 08:25:05,782 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:25:05,782 | INFO | Cycle 6: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_6.csv
+2026-07-24 08:29:07,720 | INFO | Attack sentinel detected: vanet_attack_ready_7 → cycle 7
+2026-07-24 08:29:07,843 | INFO | ==================================================
+2026-07-24 08:29:07,843 | INFO | Attack detection cycle 7
+2026-07-24 08:29:07,844 | INFO | Cycle 7: read metrics for 93 nodes
+2026-07-24 08:29:07,844 | INFO | Cycle 7: invoking attack detection...
+2026-07-24 08:29:08,054 | INFO | DetectAttacks success | Cycle: 7 | Detections: 2
+2026-07-24 08:29:08,055 | INFO | Cycle 7: wrote detection summary for 76 nodes to /tmp/ai_agent/detection_summary_cycle_7.csv
+2026-07-24 08:29:08,055 | WARNING | Cycle 7: ⚠ 2 attack(s) detected!
+2026-07-24 08:29:08,055 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 59 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:29:08,055 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 175 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 08:29:08,056 | INFO | Cycle 7: saved 2 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 08:29:08,056 | WARNING | Cycle 7: requested revocation of routing node 59; ns-3 response: QUEUED:routing_node_id=59:global_id=61
+2026-07-24 08:29:08,057 | WARNING | Cycle 7: requested revocation of routing node 175; ns-3 response: QUEUED:routing_node_id=175:global_id=177
+2026-07-24 08:29:08,057 | INFO | Cycle 7: revocation requests complete — successful=2, failed=0, unique_attackers=2
+2026-07-24 08:29:08,057 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:29:08,057 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 7
+2026-07-24 08:29:08,057 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:29:08,057 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 08:29:08,057 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:29:08,057 | INFO |   Interleaved Jamming       12     0    406    51   0.4114
+2026-07-24 08:29:08,057 | INFO |   Split Path                20    10    439     0   0.8074
+2026-07-24 08:29:08,057 | INFO |   Flow Stretching           15     0    428    26   0.5873
+2026-07-24 08:29:08,058 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:29:08,058 | INFO | Cycle 7: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_7.csv
+2026-07-24 08:33:54,255 | INFO | Attack sentinel detected: vanet_attack_ready_8 → cycle 8
+2026-07-24 08:33:54,361 | INFO | ==================================================
+2026-07-24 08:33:54,361 | INFO | Attack detection cycle 8
+2026-07-24 08:33:54,364 | INFO | Cycle 8: read metrics for 99 nodes
+2026-07-24 08:33:54,364 | INFO | Cycle 8: invoking attack detection...
+2026-07-24 08:33:54,879 | ERROR | DetectAttacks exception: object of type 'NoneType' has no len()
+2026-07-24 08:33:54,880 | INFO | Cycle 8: wrote detection summary for 73 nodes to /tmp/ai_agent/detection_summary_cycle_8.csv
+2026-07-24 08:33:54,880 | INFO | Cycle 8: ✓ No attacks detected — all nodes clean
+2026-07-24 08:33:54,880 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:33:54,880 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 8
+2026-07-24 08:33:54,880 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:33:54,880 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 08:33:54,880 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:33:54,880 | INFO |   Interleaved Jamming       12     0    477    53   0.4076
+2026-07-24 08:33:54,881 | INFO |   Split Path                20    10    512     0   0.8086
+2026-07-24 08:33:54,881 | INFO |   Flow Stretching           15     0    500    27   0.5821
+2026-07-24 08:33:54,881 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:33:54,881 | INFO | Cycle 8: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_8.csv
+2026-07-24 08:38:43,393 | INFO | Attack sentinel detected: vanet_attack_ready_9 → cycle 9
+2026-07-24 08:38:43,494 | INFO | ==================================================
+2026-07-24 08:38:43,495 | INFO | Attack detection cycle 9
+2026-07-24 08:38:43,495 | INFO | Cycle 9: read metrics for 45 nodes
+2026-07-24 08:38:43,495 | INFO | Cycle 9: invoking attack detection...
+2026-07-24 08:38:43,751 | INFO | DetectAttacks success | Cycle: 9 | Detections: 3
+2026-07-24 08:38:43,752 | INFO | Cycle 9: wrote detection summary for 42 nodes to /tmp/ai_agent/detection_summary_cycle_9.csv
+2026-07-24 08:38:43,752 | WARNING | Cycle 9: ⚠ 3 attack(s) detected!
+2026-07-24 08:38:43,752 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 44 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:38:43,752 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 79 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:38:43,752 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 250 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:38:43,752 | INFO | Cycle 9: saved 3 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 08:38:43,756 | WARNING | Cycle 9: requested revocation of routing node 44; ns-3 response: QUEUED:routing_node_id=44:global_id=46
+2026-07-24 08:38:43,756 | WARNING | Cycle 9: requested revocation of routing node 79; ns-3 response: QUEUED:routing_node_id=79:global_id=81
+2026-07-24 08:38:43,756 | WARNING | Cycle 9: requested revocation of routing node 250; ns-3 response: QUEUED:routing_node_id=250:global_id=252
+2026-07-24 08:38:43,756 | INFO | Cycle 9: revocation requests complete — successful=3, failed=0, unique_attackers=3
+2026-07-24 08:38:43,757 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:38:43,757 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 9
+2026-07-24 08:38:43,757 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:38:43,757 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 08:38:43,757 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:38:43,757 | INFO |   Interleaved Jamming       15     0    514    55   0.4400
+2026-07-24 08:38:43,757 | INFO |   Split Path                20    10    554     0   0.8092
+2026-07-24 08:38:43,757 | INFO |   Flow Stretching           15     0    541    28   0.5759
+2026-07-24 08:38:43,757 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:38:43,757 | INFO | Cycle 9: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_9.csv
+2026-07-24 08:47:27,871 | INFO | Attack sentinel detected: vanet_attack_ready_10 → cycle 10
+2026-07-24 08:47:27,973 | INFO | ==================================================
+2026-07-24 08:47:27,973 | INFO | Attack detection cycle 10
+2026-07-24 08:47:27,975 | INFO | Cycle 10: read metrics for 62 nodes
+2026-07-24 08:47:27,975 | INFO | Cycle 10: invoking attack detection...
+2026-07-24 08:47:28,290 | INFO | DetectAttacks success | Cycle: 10 | Detections: 2
+2026-07-24 08:47:28,293 | INFO | Cycle 10: wrote detection summary for 50 nodes to /tmp/ai_agent/detection_summary_cycle_10.csv
+2026-07-24 08:47:28,295 | WARNING | Cycle 10: ⚠ 2 attack(s) detected!
+2026-07-24 08:47:28,300 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 134 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:47:28,301 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 134 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 08:47:28,340 | INFO | Cycle 10: saved 2 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 08:47:28,353 | WARNING | Cycle 10: requested revocation of routing node 134; ns-3 response: QUEUED:routing_node_id=134:global_id=136
+2026-07-24 08:47:28,359 | INFO | Cycle 10: revocation requests complete — successful=1, failed=0, unique_attackers=1
+2026-07-24 08:47:28,360 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:47:28,374 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 10
+2026-07-24 08:47:28,382 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:47:28,394 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 08:47:28,394 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:47:28,394 | INFO |   Interleaved Jamming       16     0    562    56   0.4495
+2026-07-24 08:47:28,394 | INFO |   Split Path                20    10    604     0   0.8098
+2026-07-24 08:47:28,394 | INFO |   Flow Stretching           15     0    590    29   0.5700
+2026-07-24 08:47:28,395 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 08:47:28,395 | INFO | Cycle 10: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_10.csv
+2026-07-24 09:03:04,313 | INFO | VANET Attack Detector starting...
+2026-07-24 09:03:04,316 | INFO | Watching directory: /tmp/ai_agent
+2026-07-24 09:03:04,316 | INFO | Log file: /home/chamod/vanet_attack_detector/logs/detector.log
+2026-07-24 09:03:04,316 | INFO | Sentinel pattern: vanet_attack_ready_N
+2026-07-24 09:03:04,316 | INFO | ns-3 control socket: /tmp/vanet_verify.sock
+2026-07-24 09:03:04,319 | INFO | Attack detector ready — waiting for metrics from fix.cc...
+2026-07-24 09:22:34,637 | INFO | Attack sentinel detected: vanet_attack_ready_1 → cycle 1
+2026-07-24 09:22:34,743 | INFO | ==================================================
+2026-07-24 09:22:34,743 | INFO | Attack detection cycle 1
+2026-07-24 09:22:34,744 | INFO | Cycle 1: read metrics for 70 nodes
+2026-07-24 09:22:34,744 | INFO | Cycle 1: invoking attack detection...
+2026-07-24 09:22:34,953 | INFO | DetectAttacks success | Cycle: 1 | Detections: 21
+2026-07-24 09:22:34,954 | INFO | Cycle 1: wrote detection summary for 70 nodes to /tmp/ai_agent/detection_summary_cycle_1.csv
+2026-07-24 09:22:34,954 | WARNING | Cycle 1: ⚠ 21 attack(s) detected!
+2026-07-24 09:22:34,954 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 12 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,954 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 38 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,954 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 41 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,954 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 75 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,954 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 118 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,954 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 122 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:22:34,954 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 123 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,954 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 130 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,954 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 143 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,954 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 168 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:22:34,954 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 240 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,954 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 268 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,955 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 274 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,955 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 5 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,955 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 141 | Flow: 1 | FF: 0.275 | PDRN: 0.059
+2026-07-24 09:22:34,955 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 169 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,955 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 182 | Flow: 1 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:22:34,955 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 197 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,955 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 236 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,955 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 249 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,955 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 258 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:22:34,958 | INFO | Cycle 1: saved 21 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 09:22:34,959 | WARNING | Cycle 1: requested revocation of routing node 12; ns-3 response: QUEUED:routing_node_id=12:global_id=14
+2026-07-24 09:22:34,960 | WARNING | Cycle 1: requested revocation of routing node 38; ns-3 response: QUEUED:routing_node_id=38:global_id=40
+2026-07-24 09:22:34,960 | WARNING | Cycle 1: requested revocation of routing node 41; ns-3 response: QUEUED:routing_node_id=41:global_id=43
+2026-07-24 09:22:34,961 | WARNING | Cycle 1: requested revocation of routing node 75; ns-3 response: QUEUED:routing_node_id=75:global_id=77
+2026-07-24 09:22:34,961 | WARNING | Cycle 1: requested revocation of routing node 118; ns-3 response: QUEUED:routing_node_id=118:global_id=120
+2026-07-24 09:22:34,961 | WARNING | Cycle 1: requested revocation of routing node 122; ns-3 response: QUEUED:routing_node_id=122:global_id=124
+2026-07-24 09:22:34,961 | WARNING | Cycle 1: requested revocation of routing node 123; ns-3 response: QUEUED:routing_node_id=123:global_id=125
+2026-07-24 09:22:34,961 | WARNING | Cycle 1: requested revocation of routing node 130; ns-3 response: QUEUED:routing_node_id=130:global_id=132
+2026-07-24 09:22:34,962 | WARNING | Cycle 1: requested revocation of routing node 143; ns-3 response: QUEUED:routing_node_id=143:global_id=145
+2026-07-24 09:22:34,962 | WARNING | Cycle 1: requested revocation of routing node 168; ns-3 response: QUEUED:routing_node_id=168:global_id=170
+2026-07-24 09:22:34,962 | WARNING | Cycle 1: requested revocation of routing node 240; ns-3 response: QUEUED:routing_node_id=240:global_id=242
+2026-07-24 09:22:34,962 | WARNING | Cycle 1: requested revocation of routing node 268; ns-3 response: QUEUED:routing_node_id=268:global_id=270
+2026-07-24 09:22:34,962 | WARNING | Cycle 1: requested revocation of routing node 274; ns-3 response: QUEUED:routing_node_id=274:global_id=276
+2026-07-24 09:22:34,963 | WARNING | Cycle 1: requested revocation of routing node 5; ns-3 response: QUEUED:routing_node_id=5:global_id=7
+2026-07-24 09:22:34,963 | WARNING | Cycle 1: requested revocation of routing node 141; ns-3 response: QUEUED:routing_node_id=141:global_id=143
+2026-07-24 09:22:34,963 | WARNING | Cycle 1: requested revocation of routing node 169; ns-3 response: QUEUED:routing_node_id=169:global_id=171
+2026-07-24 09:22:34,963 | WARNING | Cycle 1: requested revocation of routing node 182; ns-3 response: QUEUED:routing_node_id=182:global_id=184
+2026-07-24 09:22:34,963 | WARNING | Cycle 1: requested revocation of routing node 197; ns-3 response: QUEUED:routing_node_id=197:global_id=199
+2026-07-24 09:22:34,964 | WARNING | Cycle 1: requested revocation of routing node 236; ns-3 response: QUEUED:routing_node_id=236:global_id=238
+2026-07-24 09:22:34,964 | WARNING | Cycle 1: requested revocation of routing node 249; ns-3 response: QUEUED:routing_node_id=249:global_id=251
+2026-07-24 09:22:34,964 | WARNING | Cycle 1: requested revocation of routing node 258; ns-3 response: QUEUED:routing_node_id=258:global_id=260
+2026-07-24 09:22:34,964 | INFO | Cycle 1: revocation requests complete — successful=21, failed=0, unique_attackers=21
+2026-07-24 09:22:34,964 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:22:34,964 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 1
+2026-07-24 09:22:34,964 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:22:34,964 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 09:22:34,965 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:22:34,965 | INFO |   Interleaved Jamming        0     0     46    24   0.0000
+2026-07-24 09:22:34,965 | INFO |   Split Path                 9     9     52     0   0.6529
+2026-07-24 09:22:34,965 | INFO |   Flow Stretching            3     0     62     5   0.5891
+2026-07-24 09:22:34,965 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:22:34,965 | INFO |   All Attacks (Overall)     21     0     29    20   0.5506
+2026-07-24 09:22:34,965 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:22:34,966 | INFO | Cycle 1: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_1.csv
+2026-07-24 09:25:59,388 | INFO | Attack sentinel detected: vanet_attack_ready_2 → cycle 2
+2026-07-24 09:25:59,489 | INFO | ==================================================
+2026-07-24 09:25:59,490 | INFO | Attack detection cycle 2
+2026-07-24 09:25:59,491 | INFO | Cycle 2: read metrics for 31 nodes
+2026-07-24 09:25:59,491 | INFO | Cycle 2: invoking attack detection...
+2026-07-24 09:25:59,654 | INFO | DetectAttacks success | Cycle: 2 | Detections: 5
+2026-07-24 09:25:59,657 | INFO | Cycle 2: wrote detection summary for 31 nodes to /tmp/ai_agent/detection_summary_cycle_2.csv
+2026-07-24 09:25:59,658 | WARNING | Cycle 2: ⚠ 5 attack(s) detected!
+2026-07-24 09:25:59,658 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 30 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:25:59,658 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 111 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:25:59,658 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 155 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:25:59,658 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 195 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:25:59,658 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 251 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:25:59,658 | INFO | Cycle 2: saved 5 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 09:25:59,659 | WARNING | Cycle 2: requested revocation of routing node 30; ns-3 response: QUEUED:routing_node_id=30:global_id=32
+2026-07-24 09:25:59,662 | WARNING | Cycle 2: requested revocation of routing node 111; ns-3 response: QUEUED:routing_node_id=111:global_id=113
+2026-07-24 09:25:59,663 | WARNING | Cycle 2: requested revocation of routing node 155; ns-3 response: QUEUED:routing_node_id=155:global_id=157
+2026-07-24 09:25:59,664 | WARNING | Cycle 2: requested revocation of routing node 195; ns-3 response: QUEUED:routing_node_id=195:global_id=197
+2026-07-24 09:25:59,665 | WARNING | Cycle 2: requested revocation of routing node 251; ns-3 response: QUEUED:routing_node_id=251:global_id=253
+2026-07-24 09:25:59,665 | INFO | Cycle 2: revocation requests complete — successful=5, failed=0, unique_attackers=5
+2026-07-24 09:25:59,665 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:25:59,665 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 2
+2026-07-24 09:25:59,665 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:25:59,665 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 09:25:59,665 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:25:59,665 | INFO |   Interleaved Jamming        4     0     63    34   0.2615
+2026-07-24 09:25:59,665 | INFO |   Split Path                 9     9     83     0   0.6716
+2026-07-24 09:25:59,665 | INFO |   Flow Stretching            4     0     90     7   0.5809
+2026-07-24 09:25:59,665 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:25:59,665 | INFO |   All Attacks (Overall)     26     0     43    32   0.5070
+2026-07-24 09:25:59,665 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:25:59,665 | INFO | Cycle 2: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_2.csv
+2026-07-24 09:28:36,013 | INFO | Attack sentinel detected: vanet_attack_ready_3 → cycle 3
+2026-07-24 09:28:36,114 | INFO | ==================================================
+2026-07-24 09:28:36,114 | INFO | Attack detection cycle 3
+2026-07-24 09:28:36,115 | INFO | Cycle 3: read metrics for 48 nodes
+2026-07-24 09:28:36,115 | INFO | Cycle 3: invoking attack detection...
+2026-07-24 09:28:36,377 | INFO | DetectAttacks success | Cycle: 3 | Detections: 8
+2026-07-24 09:28:36,378 | INFO | Cycle 3: wrote detection summary for 48 nodes to /tmp/ai_agent/detection_summary_cycle_3.csv
+2026-07-24 09:28:36,380 | WARNING | Cycle 3: ⚠ 8 attack(s) detected!
+2026-07-24 09:28:36,380 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 27 | Flow: 0 | FF: 0.235 | PDRN: 0.167
+2026-07-24 09:28:36,380 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 34 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:28:36,380 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 42 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:28:36,380 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 151 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:28:36,380 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 198 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:28:36,380 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 228 | Flow: 0 | FF: 0.242 | PDRN: 0.111
+2026-07-24 09:28:36,380 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 257 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:28:36,380 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 262 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:28:36,380 | INFO | Cycle 3: saved 8 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 09:28:36,382 | WARNING | Cycle 3: requested revocation of routing node 27; ns-3 response: QUEUED:routing_node_id=27:global_id=29
+2026-07-24 09:28:36,383 | WARNING | Cycle 3: requested revocation of routing node 34; ns-3 response: QUEUED:routing_node_id=34:global_id=36
+2026-07-24 09:28:36,386 | WARNING | Cycle 3: requested revocation of routing node 42; ns-3 response: QUEUED:routing_node_id=42:global_id=44
+2026-07-24 09:28:36,387 | WARNING | Cycle 3: requested revocation of routing node 151; ns-3 response: QUEUED:routing_node_id=151:global_id=153
+2026-07-24 09:28:36,387 | WARNING | Cycle 3: requested revocation of routing node 198; ns-3 response: QUEUED:routing_node_id=198:global_id=200
+2026-07-24 09:28:36,387 | WARNING | Cycle 3: requested revocation of routing node 228; ns-3 response: QUEUED:routing_node_id=228:global_id=230
+2026-07-24 09:28:36,387 | WARNING | Cycle 3: requested revocation of routing node 257; ns-3 response: QUEUED:routing_node_id=257:global_id=259
+2026-07-24 09:28:36,387 | WARNING | Cycle 3: requested revocation of routing node 262; ns-3 response: QUEUED:routing_node_id=262:global_id=264
+2026-07-24 09:28:36,387 | INFO | Cycle 3: revocation requests complete — successful=8, failed=0, unique_attackers=8
+2026-07-24 09:28:36,387 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:28:36,388 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 3
+2026-07-24 09:28:36,388 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:28:36,388 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 09:28:36,388 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:28:36,388 | INFO |   Interleaved Jamming        6     0    105    38   0.3164
+2026-07-24 09:28:36,388 | INFO |   Split Path                13     9    127     0   0.7428
+2026-07-24 09:28:36,388 | INFO |   Flow Stretching            6     0    132    11   0.5708
+2026-07-24 09:28:36,388 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:28:36,388 | INFO |   All Attacks (Overall)     34     0     75    40   0.5474
+2026-07-24 09:28:36,388 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:28:36,388 | INFO | Cycle 3: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_3.csv
+2026-07-24 09:32:41,545 | INFO | Attack sentinel detected: vanet_attack_ready_4 → cycle 4
+2026-07-24 09:32:41,646 | INFO | ==================================================
+2026-07-24 09:32:41,646 | INFO | Attack detection cycle 4
+2026-07-24 09:32:41,651 | INFO | Cycle 4: read metrics for 92 nodes
+2026-07-24 09:32:41,652 | INFO | Cycle 4: invoking attack detection...
+2026-07-24 09:32:42,239 | INFO | DetectAttacks success | Cycle: 4 | Detections: 10
+2026-07-24 09:32:42,240 | INFO | Cycle 4: wrote detection summary for 70 nodes to /tmp/ai_agent/detection_summary_cycle_4.csv
+2026-07-24 09:32:42,240 | WARNING | Cycle 4: ⚠ 10 attack(s) detected!
+2026-07-24 09:32:42,240 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 31 | Flow: 0 | FF: 0.962 | PDRN: 1.077
+2026-07-24 09:32:42,240 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 72 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:32:42,240 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 127 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:32:42,240 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 152 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:32:42,240 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 188 | Flow: 0 | FF: 0.889 | PDRN: 0.111
+2026-07-24 09:32:42,240 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 261 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:32:42,242 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 72 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:32:42,243 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 127 | Flow: 1 | FF: 0.107 | PDRN: 0.250
+2026-07-24 09:32:42,244 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 138 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:32:42,244 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 279 | Flow: 1 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:32:42,245 | INFO | Cycle 4: saved 10 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 09:32:42,246 | WARNING | Cycle 4: requested revocation of routing node 31; ns-3 response: QUEUED:routing_node_id=31:global_id=33
+2026-07-24 09:32:42,248 | WARNING | Cycle 4: requested revocation of routing node 72; ns-3 response: QUEUED:routing_node_id=72:global_id=74
+2026-07-24 09:32:42,250 | WARNING | Cycle 4: requested revocation of routing node 127; ns-3 response: QUEUED:routing_node_id=127:global_id=129
+2026-07-24 09:32:42,250 | WARNING | Cycle 4: requested revocation of routing node 152; ns-3 response: QUEUED:routing_node_id=152:global_id=154
+2026-07-24 09:32:42,252 | WARNING | Cycle 4: requested revocation of routing node 188; ns-3 response: QUEUED:routing_node_id=188:global_id=190
+2026-07-24 09:32:42,252 | WARNING | Cycle 4: requested revocation of routing node 261; ns-3 response: QUEUED:routing_node_id=261:global_id=263
+2026-07-24 09:32:42,253 | WARNING | Cycle 4: requested revocation of routing node 138; ns-3 response: QUEUED:routing_node_id=138:global_id=140
+2026-07-24 09:32:42,253 | WARNING | Cycle 4: requested revocation of routing node 279; ns-3 response: QUEUED:routing_node_id=279:global_id=281
+2026-07-24 09:32:42,253 | INFO | Cycle 4: revocation requests complete — successful=8, failed=0, unique_attackers=8
+2026-07-24 09:32:42,253 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:32:42,254 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 4
+2026-07-24 09:32:42,254 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:32:42,254 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 09:32:42,254 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:32:42,254 | INFO |   Interleaved Jamming        8     0    171    40   0.3675
+2026-07-24 09:32:42,254 | INFO |   Split Path                17     9    193     0   0.7904
+2026-07-24 09:32:42,254 | INFO |   Flow Stretching            8     0    196    15   0.5684
+2026-07-24 09:32:42,254 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:32:42,254 | INFO |   All Attacks (Overall)     42     0    131    46   0.5943
+2026-07-24 09:32:42,254 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:32:42,255 | INFO | Cycle 4: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_4.csv
+2026-07-24 09:37:20,911 | INFO | Attack sentinel detected: vanet_attack_ready_5 → cycle 5
+2026-07-24 09:37:21,012 | INFO | ==================================================
+2026-07-24 09:37:21,013 | INFO | Attack detection cycle 5
+2026-07-24 09:37:21,013 | INFO | Cycle 5: read metrics for 108 nodes
+2026-07-24 09:37:21,013 | INFO | Cycle 5: invoking attack detection...
+2026-07-24 09:37:21,323 | INFO | DetectAttacks success | Cycle: 5 | Detections: 8
+2026-07-24 09:37:21,327 | INFO | Cycle 5: wrote detection summary for 97 nodes to /tmp/ai_agent/detection_summary_cycle_5.csv
+2026-07-24 09:37:21,328 | WARNING | Cycle 5: ⚠ 8 attack(s) detected!
+2026-07-24 09:37:21,328 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 1 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:37:21,328 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 67 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:37:21,328 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 183 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:37:21,328 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 239 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:37:21,329 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 36 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:37:21,330 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 84 | Flow: 1 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:37:21,330 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 89 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:37:21,330 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 239 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:37:21,331 | INFO | Cycle 5: saved 8 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 09:37:21,333 | WARNING | Cycle 5: requested revocation of routing node 1; ns-3 response: QUEUED:routing_node_id=1:global_id=3
+2026-07-24 09:37:21,336 | WARNING | Cycle 5: requested revocation of routing node 67; ns-3 response: QUEUED:routing_node_id=67:global_id=69
+2026-07-24 09:37:21,337 | WARNING | Cycle 5: requested revocation of routing node 183; ns-3 response: QUEUED:routing_node_id=183:global_id=185
+2026-07-24 09:37:21,338 | WARNING | Cycle 5: requested revocation of routing node 239; ns-3 response: QUEUED:routing_node_id=239:global_id=241
+2026-07-24 09:37:21,338 | WARNING | Cycle 5: requested revocation of routing node 36; ns-3 response: QUEUED:routing_node_id=36:global_id=38
+2026-07-24 09:37:21,339 | WARNING | Cycle 5: requested revocation of routing node 84; ns-3 response: QUEUED:routing_node_id=84:global_id=86
+2026-07-24 09:37:21,339 | WARNING | Cycle 5: requested revocation of routing node 89; ns-3 response: QUEUED:routing_node_id=89:global_id=91
+2026-07-24 09:37:21,340 | INFO | Cycle 5: revocation requests complete — successful=7, failed=0, unique_attackers=7
+2026-07-24 09:37:21,340 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:37:21,340 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 5
+2026-07-24 09:37:21,340 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:37:21,340 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 09:37:21,340 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:37:21,340 | INFO |   Interleaved Jamming       11     0    260    45   0.4092
+2026-07-24 09:37:21,340 | INFO |   Split Path                19    10    287     0   0.7957
+2026-07-24 09:37:21,340 | INFO |   Flow Stretching            9     0    285    22   0.5192
+2026-07-24 09:37:21,340 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:37:21,340 | INFO |   All Attacks (Overall)     49     0    210    57   0.6030
+2026-07-24 09:37:21,340 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:37:21,340 | INFO | Cycle 5: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_5.csv
+2026-07-24 09:41:17,575 | INFO | Attack sentinel detected: vanet_attack_ready_6 → cycle 6
+2026-07-24 09:41:17,693 | INFO | ==================================================
+2026-07-24 09:41:17,693 | INFO | Attack detection cycle 6
+2026-07-24 09:41:17,694 | INFO | Cycle 6: read metrics for 84 nodes
+2026-07-24 09:41:17,694 | INFO | Cycle 6: invoking attack detection...
+2026-07-24 09:41:18,054 | INFO | DetectAttacks success | Cycle: 6 | Detections: 6
+2026-07-24 09:41:18,057 | INFO | Cycle 6: wrote detection summary for 77 nodes to /tmp/ai_agent/detection_summary_cycle_6.csv
+2026-07-24 09:41:18,057 | WARNING | Cycle 6: ⚠ 6 attack(s) detected!
+2026-07-24 09:41:18,057 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 48 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:41:18,057 | WARNING |   🟠 SPLIT PATH ATTACK | Node: 63 | Flow: 0 | FF: 0.652 | PDRN: 0.062
+2026-07-24 09:41:18,057 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 77 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:41:18,057 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 226 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:41:18,057 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 248 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:41:18,057 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 259 | Flow: 0 | FF: 0.900 | PDRN: 0.100
+2026-07-24 09:41:18,057 | INFO | Cycle 6: saved 6 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 09:41:18,061 | WARNING | Cycle 6: requested revocation of routing node 48; ns-3 response: QUEUED:routing_node_id=48:global_id=50
+2026-07-24 09:41:18,063 | WARNING | Cycle 6: requested revocation of routing node 63; ns-3 response: QUEUED:routing_node_id=63:global_id=65
+2026-07-24 09:41:18,063 | WARNING | Cycle 6: requested revocation of routing node 77; ns-3 response: QUEUED:routing_node_id=77:global_id=79
+2026-07-24 09:41:18,064 | WARNING | Cycle 6: requested revocation of routing node 226; ns-3 response: QUEUED:routing_node_id=226:global_id=228
+2026-07-24 09:41:18,064 | WARNING | Cycle 6: requested revocation of routing node 248; ns-3 response: QUEUED:routing_node_id=248:global_id=250
+2026-07-24 09:41:18,064 | WARNING | Cycle 6: requested revocation of routing node 259; ns-3 response: QUEUED:routing_node_id=259:global_id=261
+2026-07-24 09:41:18,064 | INFO | Cycle 6: revocation requests complete — successful=6, failed=0, unique_attackers=6
+2026-07-24 09:41:18,070 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:41:18,070 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 6
+2026-07-24 09:41:18,070 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:41:18,070 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 09:41:18,070 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:41:18,070 | INFO |   Interleaved Jamming       12     0    334    47   0.4223
+2026-07-24 09:41:18,070 | INFO |   Split Path                20    10    363     0   0.8055
+2026-07-24 09:41:18,070 | INFO |   Flow Stretching           13     0    355    25   0.5653
+2026-07-24 09:41:18,070 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:41:18,070 | INFO |   All Attacks (Overall)     55     0    276    62   0.6196
+2026-07-24 09:41:18,070 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:41:18,070 | INFO | Cycle 6: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_6.csv
+2026-07-24 09:45:38,516 | INFO | Attack sentinel detected: vanet_attack_ready_7 → cycle 7
+2026-07-24 09:45:38,619 | INFO | ==================================================
+2026-07-24 09:45:38,619 | INFO | Attack detection cycle 7
+2026-07-24 09:45:38,620 | INFO | Cycle 7: read metrics for 93 nodes
+2026-07-24 09:45:38,620 | INFO | Cycle 7: invoking attack detection...
+2026-07-24 09:45:39,030 | INFO | DetectAttacks success | Cycle: 7 | Detections: 2
+2026-07-24 09:45:39,032 | INFO | Cycle 7: wrote detection summary for 76 nodes to /tmp/ai_agent/detection_summary_cycle_7.csv
+2026-07-24 09:45:39,033 | WARNING | Cycle 7: ⚠ 2 attack(s) detected!
+2026-07-24 09:45:39,033 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 59 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:45:39,033 | WARNING |   🟡 FLOW STRETCHING ATTACK | Node: 175 | Flow: 0 | FF: 1.000 | PDRN: 1.000
+2026-07-24 09:45:39,040 | INFO | Cycle 7: saved 2 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 09:45:39,054 | WARNING | Cycle 7: requested revocation of routing node 59; ns-3 response: QUEUED:routing_node_id=59:global_id=61
+2026-07-24 09:45:39,055 | WARNING | Cycle 7: requested revocation of routing node 175; ns-3 response: QUEUED:routing_node_id=175:global_id=177
+2026-07-24 09:45:39,055 | INFO | Cycle 7: revocation requests complete — successful=2, failed=0, unique_attackers=2
+2026-07-24 09:45:39,056 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:45:39,056 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 7
+2026-07-24 09:45:39,056 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:45:39,056 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 09:45:39,056 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:45:39,056 | INFO |   Interleaved Jamming       12     0    406    51   0.4114
+2026-07-24 09:45:39,056 | INFO |   Split Path                20    10    439     0   0.8074
+2026-07-24 09:45:39,056 | INFO |   Flow Stretching           15     0    428    26   0.5873
+2026-07-24 09:45:39,056 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:45:39,056 | INFO |   All Attacks (Overall)     57     0    345    67   0.6204
+2026-07-24 09:45:39,057 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:45:39,057 | INFO | Cycle 7: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_7.csv
+2026-07-24 09:50:36,839 | INFO | Attack sentinel detected: vanet_attack_ready_8 → cycle 8
+2026-07-24 09:50:37,003 | INFO | ==================================================
+2026-07-24 09:50:37,003 | INFO | Attack detection cycle 8
+2026-07-24 09:50:37,005 | INFO | Cycle 8: read metrics for 99 nodes
+2026-07-24 09:50:37,006 | INFO | Cycle 8: invoking attack detection...
+2026-07-24 09:50:37,402 | ERROR | DetectAttacks exception: object of type 'NoneType' has no len()
+2026-07-24 09:50:37,405 | INFO | Cycle 8: wrote detection summary for 73 nodes to /tmp/ai_agent/detection_summary_cycle_8.csv
+2026-07-24 09:50:37,406 | INFO | Cycle 8: ✓ No attacks detected — all nodes clean
+2026-07-24 09:50:37,406 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:50:37,407 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 8
+2026-07-24 09:50:37,407 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:50:37,407 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 09:50:37,407 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:50:37,407 | INFO |   Interleaved Jamming       12     0    477    53   0.4076
+2026-07-24 09:50:37,407 | INFO |   Split Path                20    10    512     0   0.8086
+2026-07-24 09:50:37,407 | INFO |   Flow Stretching           15     0    500    27   0.5821
+2026-07-24 09:50:37,407 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:50:37,407 | INFO |   All Attacks (Overall)     57     0    415    70   0.6197
+2026-07-24 09:50:37,407 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:50:37,408 | INFO | Cycle 8: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_8.csv
+2026-07-24 09:54:22,071 | INFO | Attack sentinel detected: vanet_attack_ready_9 → cycle 9
+2026-07-24 09:54:22,174 | INFO | ==================================================
+2026-07-24 09:54:22,174 | INFO | Attack detection cycle 9
+2026-07-24 09:54:22,175 | INFO | Cycle 9: read metrics for 45 nodes
+2026-07-24 09:54:22,175 | INFO | Cycle 9: invoking attack detection...
+2026-07-24 09:54:22,350 | INFO | DetectAttacks success | Cycle: 9 | Detections: 3
+2026-07-24 09:54:22,350 | INFO | Cycle 9: wrote detection summary for 42 nodes to /tmp/ai_agent/detection_summary_cycle_9.csv
+2026-07-24 09:54:22,352 | WARNING | Cycle 9: ⚠ 3 attack(s) detected!
+2026-07-24 09:54:22,352 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 44 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:54:22,352 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 79 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:54:22,352 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 250 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 09:54:22,353 | INFO | Cycle 9: saved 3 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 09:54:22,353 | WARNING | Cycle 9: requested revocation of routing node 44; ns-3 response: QUEUED:routing_node_id=44:global_id=46
+2026-07-24 09:54:22,354 | WARNING | Cycle 9: requested revocation of routing node 79; ns-3 response: QUEUED:routing_node_id=79:global_id=81
+2026-07-24 09:54:22,354 | WARNING | Cycle 9: requested revocation of routing node 250; ns-3 response: QUEUED:routing_node_id=250:global_id=252
+2026-07-24 09:54:22,354 | INFO | Cycle 9: revocation requests complete — successful=3, failed=0, unique_attackers=3
+2026-07-24 09:54:22,354 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:54:22,354 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 9
+2026-07-24 09:54:22,354 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:54:22,354 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 09:54:22,354 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:54:22,354 | INFO |   Interleaved Jamming       15     0    514    55   0.4400
+2026-07-24 09:54:22,354 | INFO |   Split Path                20    10    554     0   0.8092
+2026-07-24 09:54:22,354 | INFO |   Flow Stretching           15     0    541    28   0.5759
+2026-07-24 09:54:22,354 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:54:22,354 | INFO |   All Attacks (Overall)     60     0    451    73   0.6231
+2026-07-24 09:54:22,354 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 09:54:22,354 | INFO | Cycle 9: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_9.csv
+2026-07-24 10:02:30,993 | INFO | Attack sentinel detected: vanet_attack_ready_10 → cycle 10
+2026-07-24 10:02:31,094 | INFO | ==================================================
+2026-07-24 10:02:31,094 | INFO | Attack detection cycle 10
+2026-07-24 10:02:31,095 | INFO | Cycle 10: read metrics for 62 nodes
+2026-07-24 10:02:31,095 | INFO | Cycle 10: invoking attack detection...
+2026-07-24 10:02:31,309 | INFO | DetectAttacks success | Cycle: 10 | Detections: 2
+2026-07-24 10:02:31,309 | INFO | Cycle 10: wrote detection summary for 50 nodes to /tmp/ai_agent/detection_summary_cycle_10.csv
+2026-07-24 10:02:31,312 | WARNING | Cycle 10: ⚠ 2 attack(s) detected!
+2026-07-24 10:02:31,313 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 134 | Flow: 0 | FF: 1.000 | PDRN: 0.000
+2026-07-24 10:02:31,313 | WARNING |   🔴 INTERLEAVED GRAY HOLE ATTACK | Node: 134 | Flow: 1 | FF: 1.000 | PDRN: 0.000
+2026-07-24 10:02:31,313 | INFO | Cycle 10: saved 2 detection(s) to /tmp/ai_agent/detected_attackers.csv
+2026-07-24 10:02:31,315 | WARNING | Cycle 10: requested revocation of routing node 134; ns-3 response: QUEUED:routing_node_id=134:global_id=136
+2026-07-24 10:02:31,316 | INFO | Cycle 10: revocation requests complete — successful=1, failed=0, unique_attackers=1
+2026-07-24 10:02:31,316 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 10:02:31,316 | INFO |   MODEL PERFORMANCE — Cumulative after cycle 10
+2026-07-24 10:02:31,316 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 10:02:31,316 | INFO |   Attack Type               TP    FP     TN    FN      MCC
+2026-07-24 10:02:31,316 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 10:02:31,317 | INFO |   Interleaved Jamming       16     0    562    56   0.4495
+2026-07-24 10:02:31,317 | INFO |   Split Path                20    10    604     0   0.8098
+2026-07-24 10:02:31,317 | INFO |   Flow Stretching           15     0    590    29   0.5700
+2026-07-24 10:02:31,317 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 10:02:31,317 | INFO |   All Attacks (Overall)     61     0    498    75   0.6244
+2026-07-24 10:02:31,317 | INFO | ────────────────────────────────────────────────────────────────────────
+2026-07-24 10:02:31,318 | INFO | Cycle 10: retained metrics CSV: /tmp/ai_agent/ff_node_anomaly_scores_10.csv

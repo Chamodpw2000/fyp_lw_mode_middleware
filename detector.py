@@ -74,52 +74,60 @@ GROUND_TRUTH_ATTACKERS = {
 }
 
 # ─── Cumulative Detection State (updated every cycle) ────────────────────────
-# Keyed by attack_type string. Each value is a dict of running totals.
-_cumulative_stats: dict = {
-    attack_type: {"TP": 0, "FP": 0, "TN": 0, "FN": 0}
-    for attack_type in GROUND_TRUTH_ATTACKERS
-}
+# Stores SETS of node_ids, not counts, so the same node cannot be
+# counted twice across cycles regardless of how many cycles it appears in.
+#
+# Per-attack tracking:
+#   _ever_detected[attack_type]  = node_ids detected as that attack type (ever)
+#   _ever_evaluated[attack_type] = node_ids sent to chaincode in any cycle
+#
+# Overall tracking (attack-type-agnostic):
+#   _overall_ever_detected = node_ids detected as ANY attack type (ever)
+#   _overall_ever_evaluated = node_ids sent to chaincode in any cycle
 
+_ever_detected: dict = {at: set() for at in GROUND_TRUTH_ATTACKERS}
+_ever_evaluated: dict = {at: set() for at in GROUND_TRUTH_ATTACKERS}
 
+_overall_ever_detected:  set = set()
+_overall_ever_evaluated: set = set()
 def _compute_and_display_mcc(cycle_id: int, detections: list, nodes: list) -> None:
     """
-    Updates cumulative TP/FP/TN/FN for each attack type using the detections
-    from this cycle, then prints a per-attack table and MCC values.
+    Updates cumulative per-attack and overall detection sets, then prints
+    the TP/FP/TN/FN table and MCC values.
+
+    Uses sets of node_ids (not integer counters) so that the same node
+    appearing in multiple cycles is never counted more than once.
 
     detections : list of dicts returned by detect_attacks()
-    nodes      : list of node dicts that were sent to the chaincode this cycle
-                 (used to get the set of nodes evaluated this cycle)
+    nodes      : list of node dicts sent to the chaincode this cycle
     """
 
-    # ── Build the set of node_ids evaluated this cycle ────────────────────────
-    evaluated_ids = {int(n["node_id"]) for n in nodes}
+    # ── Node IDs present in this cycle's CSV ─────────────────────────────────
+    cycle_evaluated = {int(n["node_id"]) for n in nodes}
 
-    # ── Build a mapping: attack_type → set of detected node_ids this cycle ────
-    detected_by_attack: dict = {at: set() for at in GROUND_TRUTH_ATTACKERS}
+    # ── Detections this cycle, grouped by attack type ─────────────────────────
+    detected_this_cycle: dict = {at: set() for at in GROUND_TRUTH_ATTACKERS}
+    all_detected_this_cycle: set = set()
 
     for d in detections or []:
         attack_type = d.get("attack_type", "")
         node_id     = int(d.get("node_id", -1))
 
-        if attack_type in detected_by_attack:
-            detected_by_attack[attack_type].add(node_id)
+        if attack_type in detected_this_cycle:
+            detected_this_cycle[attack_type].add(node_id)
 
-    # ── Update cumulative stats for each attack type ──────────────────────────
-    for attack_type, true_attacker_ids in GROUND_TRUTH_ATTACKERS.items():
-        true_set      = set(true_attacker_ids) & evaluated_ids   # only evaluated nodes
-        detected_set  = detected_by_attack[attack_type]
-        negative_set  = evaluated_ids - true_set                 # true non-attackers
+        # For overall tracking, record every detected node regardless of label.
+        all_detected_this_cycle.add(node_id)
 
-        tp = len(true_set    & detected_set)           # correctly flagged attackers
-        fp = len(negative_set & detected_set)          # innocent nodes wrongly flagged
-        fn = len(true_set    - detected_set)           # attackers the model missed
-        tn = len(negative_set - detected_set)          # innocent nodes correctly cleared
+    # ── Update per-attack cumulative sets ─────────────────────────────────────
+    for attack_type in GROUND_TRUTH_ATTACKERS:
+        # Accumulate every node seen and every node flagged (ever).
+        _ever_evaluated[attack_type].update(cycle_evaluated)
+        _ever_detected[attack_type].update(detected_this_cycle[attack_type])
 
-        stats = _cumulative_stats[attack_type]
-        stats["TP"] += tp
-        stats["FP"] += fp
-        stats["FN"] += fn
-        stats["TN"] += tn
+    # ── Update overall cumulative sets ────────────────────────────────────────
+    _overall_ever_evaluated.update(cycle_evaluated)
+    _overall_ever_detected.update(all_detected_this_cycle)
 
     # ── Print results ─────────────────────────────────────────────────────────
     _print_mcc_table(cycle_id)
@@ -127,8 +135,10 @@ def _compute_and_display_mcc(cycle_id: int, detections: list, nodes: list) -> No
 
 def _print_mcc_table(cycle_id: int) -> None:
     """
-    Prints a formatted table of cumulative TP/FP/TN/FN and MCC per attack type.
-    Called at the end of every cycle so you can see how accuracy evolves.
+    Derives TP/FP/TN/FN from cumulative node-ID sets and prints the table.
+
+    Because we store sets of node_ids (not running integer totals), every
+    node is counted exactly once no matter how many cycles it has appeared in.
     """
 
     SEP   = "─" * 72
@@ -147,20 +157,50 @@ def _print_mcc_table(cycle_id: int) -> None:
     )
     logger.info(SEP)
 
-    for attack_type, stats in _cumulative_stats.items():
-        tp, fp, tn, fn = stats["TP"], stats["FP"], stats["TN"], stats["FN"]
+    for attack_type, true_ids in GROUND_TRUTH_ATTACKERS.items():
+        evaluated  = _ever_evaluated[attack_type]   # all nodes seen so far
+        detected   = _ever_detected[attack_type]    # all nodes flagged so far
 
-        # Matthews Correlation Coefficient
+        true_set     = set(true_ids) & evaluated    # true attackers we have seen
+        negative_set = evaluated - true_set         # innocent nodes we have seen
+
+        tp = len(true_set     & detected)           # seen attacker, was flagged
+        fp = len(negative_set & detected)           # seen innocent, wrongly flagged
+        fn = len(true_set     - detected)           # seen attacker, never flagged
+        tn = len(negative_set - detected)           # seen innocent, never flagged
+
         numerator   = (tp * tn) - (fp * fn)
         denominator = ((tp + fp) * (tp + fn) * (tn + fp) * (tn + fn)) ** 0.5
-
-        mcc = (numerator / denominator) if denominator != 0 else 0.0
+        mcc         = (numerator / denominator) if denominator != 0 else 0.0
 
         label = LABEL.get(attack_type, attack_type)
         logger.info(
             f"  {label:<22} {tp:>5} {fp:>5} {tn:>6} {fn:>5}  {mcc:>7.4f}"
         )
 
+    # ── Overall row (attack-type-agnostic) ───────────────────────────────────
+    all_true_ids = set()
+    for ids in GROUND_TRUTH_ATTACKERS.values():
+        all_true_ids.update(ids)
+
+    o_evaluated    = _overall_ever_evaluated
+    o_detected     = _overall_ever_detected
+    o_true_set     = all_true_ids & o_evaluated
+    o_negative_set = o_evaluated  - o_true_set
+
+    otp = len(o_true_set     & o_detected)
+    ofp = len(o_negative_set & o_detected)
+    ofn = len(o_true_set     - o_detected)
+    otn = len(o_negative_set - o_detected)
+
+    o_numerator   = (otp * otn) - (ofp * ofn)
+    o_denominator = ((otp + ofp) * (otp + ofn) * (otn + ofp) * (otn + ofn)) ** 0.5
+    o_mcc         = (o_numerator / o_denominator) if o_denominator != 0 else 0.0
+
+    logger.info("─" * 72)
+    logger.info(
+        f"  {'All Attacks (Overall)':<22} {otp:>5} {ofp:>5} {otn:>6} {ofn:>5}  {o_mcc:>7.4f}"
+    )
     logger.info(SEP)
 
 # ─── CSV → Chaincode Input Transform ──────────────────────────────────────────
