@@ -11,6 +11,7 @@ import json
 import logging
 import time
 import sys
+import socket
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
@@ -29,6 +30,15 @@ DETECTED_ATTACKERS_CSV = os.path.join(
     ATTACK_WATCH_DIR,
     "detected_attackers.csv"
 )
+# Unix-domain control socket exposed by the ns-3 simulation.
+NS3_CONTROL_SOCKET = "/tmp/vanet_verify.sock"
+
+# Stop waiting if ns-3 does not reply within this time.
+NS3_SOCKET_TIMEOUT_SECONDS = 2.0
+
+# Retry when ns-3 is temporarily unavailable.
+NS3_REVOKE_RETRIES = 3
+NS3_RETRY_DELAY_SECONDS = 0.2
 
 # ─── Logging Setup ────────────────────────────────────────────────────────────
 logging.basicConfig(
@@ -48,6 +58,110 @@ ATTACK_LABELS = {
     "Split_Path_Attack":          "🟠 SPLIT PATH ATTACK",
     "Flow_Stretching_Attack":     "🟡 FLOW STRETCHING ATTACK",
 }
+
+
+# ─── Ground-Truth Configuration ──────────────────────────────────────────────
+# Edit these to match your simulation setup before each run.
+# total_nodes: total number of routing-layer nodes (NOT global ns-3 node count).
+# *_ATTACKER_IDS: the routing-layer node_ids that are true attackers.
+
+TOTAL_NODES = 321
+
+GROUND_TRUTH_ATTACKERS = {
+    "Interleaved_Jamming_Attack": [30, 111, 123, 143, 240, 251, 1, 75, 188, 38, 155, 198, 250, 67, 239, 261, 6, 118, 130, 258, 42, 79, 259, 260, 134, 44, 108, 141, 194, 36],   
+    "Split_Path_Attack":          [5, 12, 27, 34, 41, 58, 63, 72, 89, 96, 104, 113, 127, 138, 145, 152, 169, 176, 183, 197, 205, 214, 228, 236, 249, 257, 268, 274, 289, 301],  
+    "Flow_Stretching_Attack":     [4, 11, 22, 31, 48, 59, 66, 77, 84, 95, 106, 115, 122, 133, 144, 151, 168, 175, 182, 195, 208, 219, 226, 233, 248, 255, 262, 279, 296, 310], 
+}
+
+# ─── Cumulative Detection State (updated every cycle) ────────────────────────
+# Keyed by attack_type string. Each value is a dict of running totals.
+_cumulative_stats: dict = {
+    attack_type: {"TP": 0, "FP": 0, "TN": 0, "FN": 0}
+    for attack_type in GROUND_TRUTH_ATTACKERS
+}
+
+
+def _compute_and_display_mcc(cycle_id: int, detections: list, nodes: list) -> None:
+    """
+    Updates cumulative TP/FP/TN/FN for each attack type using the detections
+    from this cycle, then prints a per-attack table and MCC values.
+
+    detections : list of dicts returned by detect_attacks()
+    nodes      : list of node dicts that were sent to the chaincode this cycle
+                 (used to get the set of nodes evaluated this cycle)
+    """
+
+    # ── Build the set of node_ids evaluated this cycle ────────────────────────
+    evaluated_ids = {int(n["node_id"]) for n in nodes}
+
+    # ── Build a mapping: attack_type → set of detected node_ids this cycle ────
+    detected_by_attack: dict = {at: set() for at in GROUND_TRUTH_ATTACKERS}
+
+    for d in detections or []:
+        attack_type = d.get("attack_type", "")
+        node_id     = int(d.get("node_id", -1))
+
+        if attack_type in detected_by_attack:
+            detected_by_attack[attack_type].add(node_id)
+
+    # ── Update cumulative stats for each attack type ──────────────────────────
+    for attack_type, true_attacker_ids in GROUND_TRUTH_ATTACKERS.items():
+        true_set      = set(true_attacker_ids) & evaluated_ids   # only evaluated nodes
+        detected_set  = detected_by_attack[attack_type]
+        negative_set  = evaluated_ids - true_set                 # true non-attackers
+
+        tp = len(true_set    & detected_set)           # correctly flagged attackers
+        fp = len(negative_set & detected_set)          # innocent nodes wrongly flagged
+        fn = len(true_set    - detected_set)           # attackers the model missed
+        tn = len(negative_set - detected_set)          # innocent nodes correctly cleared
+
+        stats = _cumulative_stats[attack_type]
+        stats["TP"] += tp
+        stats["FP"] += fp
+        stats["FN"] += fn
+        stats["TN"] += tn
+
+    # ── Print results ─────────────────────────────────────────────────────────
+    _print_mcc_table(cycle_id)
+
+
+def _print_mcc_table(cycle_id: int) -> None:
+    """
+    Prints a formatted table of cumulative TP/FP/TN/FN and MCC per attack type.
+    Called at the end of every cycle so you can see how accuracy evolves.
+    """
+
+    SEP   = "─" * 72
+    LABEL = {
+        "Interleaved_Jamming_Attack": "Interleaved Jamming",
+        "Split_Path_Attack":          "Split Path         ",
+        "Flow_Stretching_Attack":     "Flow Stretching    ",
+    }
+
+    logger.info(SEP)
+    logger.info(f"  MODEL PERFORMANCE — Cumulative after cycle {cycle_id}")
+    logger.info(SEP)
+    logger.info(
+        f"  {'Attack Type':<22} {'TP':>5} {'FP':>5} "
+        f"{'TN':>6} {'FN':>5}  {'MCC':>7}"
+    )
+    logger.info(SEP)
+
+    for attack_type, stats in _cumulative_stats.items():
+        tp, fp, tn, fn = stats["TP"], stats["FP"], stats["TN"], stats["FN"]
+
+        # Matthews Correlation Coefficient
+        numerator   = (tp * tn) - (fp * fn)
+        denominator = ((tp + fp) * (tp + fn) * (tn + fp) * (tn + fn)) ** 0.5
+
+        mcc = (numerator / denominator) if denominator != 0 else 0.0
+
+        label = LABEL.get(attack_type, attack_type)
+        logger.info(
+            f"  {label:<22} {tp:>5} {fp:>5} {tn:>6} {fn:>5}  {mcc:>7.4f}"
+        )
+
+    logger.info(SEP)
 
 # ─── CSV → Chaincode Input Transform ──────────────────────────────────────────
 
@@ -94,6 +208,153 @@ def load_metrics_from_csv(csv_file: str) -> dict:
             nodes.append(transform_csv_row(row))
 
     return {"sim_time": sim_time, "nodes": nodes}
+
+
+# ─── ns-3 Revocation Client ───────────────────────────────────────────────────
+
+def request_ns3_revocation(routing_node_id: int) -> str:
+    """
+    Sends one revocation request to ns-3.
+
+    routing_node_id is the node_id returned by the attack-detection
+    chaincode. Do not add 2 here. The ns-3 REVOKE_NODE handler performs
+    the conversion from routing ID to global ns-3 ID.
+    """
+
+    if routing_node_id < 0:
+        raise ValueError("routing_node_id cannot be negative")
+
+    command = f"REVOKE_NODE:{routing_node_id}\n".encode("utf-8")
+    last_error = None
+
+    for attempt in range(1, NS3_REVOKE_RETRIES + 1):
+        try:
+            # Open one connection for one REVOKE_NODE command.
+            with socket.socket(
+                socket.AF_UNIX,
+                socket.SOCK_STREAM
+            ) as client:
+
+                client.settimeout(NS3_SOCKET_TIMEOUT_SECONDS)
+                client.connect(NS3_CONTROL_SOCKET)
+                client.sendall(command)
+
+                response = client.recv(1024)
+
+            if not response:
+                raise ConnectionError(
+                    "ns-3 closed the socket without sending a response"
+                )
+
+            status = response.decode("utf-8").strip()
+
+        except (OSError, ConnectionError) as exc:
+            last_error = exc
+
+            if attempt < NS3_REVOKE_RETRIES:
+                logger.warning(
+                    f"Node {routing_node_id}: revocation attempt "
+                    f"{attempt}/{NS3_REVOKE_RETRIES} failed: "
+                    f"{exc}; retrying"
+                )
+
+                time.sleep(NS3_RETRY_DELAY_SECONDS)
+                continue
+
+            break
+
+        # ns-3 successfully accepted the request.
+        if status.startswith(("QUEUED", "ALREADY_QUEUED")):
+            return status
+
+        # The connection worked, but ns-3 rejected the command.
+        # Retrying will not correct an invalid node ID or command.
+        raise RuntimeError(
+            f"ns-3 rejected the revocation request: {status}"
+        )
+
+    raise RuntimeError(
+        f"could not revoke routing node {routing_node_id}: "
+        f"{last_error}"
+    )
+
+
+def revoke_detected_attackers(
+    cycle_id: int,
+    detections: list
+) -> None:
+    """
+    Sends one REVOKE_NODE command for each unique detected node.
+
+    A node may appear several times in detections because the same node
+    can be detected in several flows. The node is sent to ns-3 only once
+    per detection cycle.
+    """
+
+    unique_node_ids = []
+    seen_node_ids = set()
+
+    # Extract and validate each detected node ID.
+    for detection in detections or []:
+        try:
+            node_id = int(detection["node_id"])
+
+        except (KeyError, TypeError, ValueError):
+            logger.error(
+                f"Cycle {cycle_id}: detection contains an invalid "
+                f"node_id: {detection!r}"
+            )
+            continue
+
+        if node_id < 0:
+            logger.error(
+                f"Cycle {cycle_id}: refusing negative node_id "
+                f"{node_id}"
+            )
+            continue
+
+        # The same node can occur in several detection records.
+        if node_id not in seen_node_ids:
+            seen_node_ids.add(node_id)
+            unique_node_ids.append(node_id)
+
+    if not unique_node_ids:
+        logger.warning(
+            f"Cycle {cycle_id}: detections contained no valid "
+            f"node IDs to revoke"
+        )
+        return
+
+    successful = 0
+    failed = 0
+
+    # Send one socket command per unique attacker.
+    for node_id in unique_node_ids:
+        try:
+            status = request_ns3_revocation(node_id)
+            successful += 1
+
+            logger.warning(
+                f"Cycle {cycle_id}: requested revocation of routing "
+                f"node {node_id}; ns-3 response: {status}"
+            )
+
+        except Exception as exc:
+            failed += 1
+
+            # A failure for one attacker must not prevent the remaining
+            # attackers from being sent to ns-3.
+            logger.error(
+                f"Cycle {cycle_id}: failed to request revocation of "
+                f"routing node {node_id}: {exc}"
+            )
+
+    logger.info(
+        f"Cycle {cycle_id}: revocation requests complete — "
+        f"successful={successful}, "
+        f"failed={failed}, "
+        f"unique_attackers={len(unique_node_ids)}"
+    )
 # ─── Core Processing Pipeline ─────────────────────────────────────────────────
 
 def save_detected_attackers(
@@ -257,8 +518,9 @@ def process_metrics(cycle_id: int, metrics_file: str, sentinel_file: str):
     Full pipeline for attack detection in one cycle:
     1. Read node metrics from CSV file
     2. Invoke DetectAttacks chaincode
-    3. Log detections
-    4. Cleanup temp files
+    3. Log and save detections
+    4. Request ns-3 revocation of detected attackers
+    5. Cleanup temporary sentinel file
     """
 
     logger.info(f"{'='*50}")
@@ -322,6 +584,18 @@ def process_metrics(cycle_id: int, metrics_file: str, sentinel_file: str):
                 sim_time=sim_time,
                 detections=detections
             )
+
+            # Tell ns-3 to remove every unique detected attacker from
+            # future routing decisions.
+            revoke_detected_attackers(
+                cycle_id=cycle_id,
+                detections=detections
+            )
+
+        # ── Step 3b: Compute and display cumulative MCC ───────────────────────
+        # This runs whether or not there were detections, so you see MCC=1.0
+        # on clean cycles too (all TN, no FP/FN).
+        _compute_and_display_mcc(cycle_id, detections or [], nodes)
 
     except Exception as e:
         logger.error(f"Cycle {cycle_id}: detection error: {e}")
@@ -394,6 +668,7 @@ def main():
     logger.info(f"Watching directory: {ATTACK_WATCH_DIR}")
     logger.info(f"Log file: {LOG_FILE}")
     logger.info(f"Sentinel pattern: vanet_attack_ready_N")
+    logger.info(f"ns-3 control socket: {NS3_CONTROL_SOCKET}")
 
     # Process any missed cycles at startup
 
